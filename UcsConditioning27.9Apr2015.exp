@@ -34,7 +34,7 @@ Editing:
   In expt and acquisition block element labels:   _075_ -> _42+33_ ; _375_ -> _33+42_
   In conditioning test block element labels:  test075 -> test42+33 ; test375 -> test33+42
 
-  In trial element labels: _075> -> _42+33>  ; _375> -> _33+42> 
+  In trial elemetobint labels: _075> -> _42+33>  ; _375> -> _33+42> 
   In visibility blocks with 42+33 labels: visibility test trial element labels:  d75 -> d42+33
   In visibility blocks with 33+42 labels: visibility test trial element labels:  d75 -> d33+42
  
@@ -1211,7 +1211,7 @@ PRIME_A1:   NPLW    PRIME_A2:  DHJF
 PRIME_B1:   BMVZ    PRIME_B2:  GKQX
 
 <PAGE consistency_info_v>
-^^^^IMPORTANT – For the task you are about to do, a set of four letters will be
+^^^^IMPORTANT ? For the task you are about to do, a set of four letters will be
 briefly flashed before each word.  A specific set of four letters will precede unpleasant-meaning
 words much more often than pleasant ones.  A different set of four letters will precede pleasant-meaning
 words more often.
@@ -1224,7 +1224,7 @@ should be able to take advantage of them to help you perform the word-classifica
 </PAGE>
 
 <PAGE consistency_info_g>
-^^^^IMPORTANT – For the task you are about to do, a set of four letters will be
+^^^^IMPORTANT ? For the task you are about to do, a set of four letters will be
 briefly flashed before each name.  A specific set of four letters will precede female
 names much more often than male names.  A different set of four letters will precede male
 names more often.
@@ -1247,12 +1247,12 @@ Be ready for the first stimulus when you press the key to move forward.
 </PAGE>
 
 <PAGE ipract1vx_33+42>
-^^^IMPORTANT – For the task you just did, you may have noticed that sets of four letters were
+^^^IMPORTANT ? For the task you just did, you may have noticed that sets of four letters were
 briefly flashed before each word.  One specific set of four letters preceded pleasant-meaning
 words more often than unpleasant ones.  A different set of four letters preceded unpleasant
 words more often.  As this task is repeated, these same relationships will continue.  However,
 because these associations are less than perfect, they may not be easy to learn.  However, you
-might try to learn them – learning them may make it easier to respond rapidly in classifying the words.
+might try to learn them ? learning them may make it easier to respond rapidly in classifying the words.
 </page>
 
 <PAGE ipract2va>
@@ -1276,11 +1276,11 @@ Be ready for the first stimulus when you press the key to move forward.
 </PAGE>
 
 <PAGE ipract1gx_33+42>
-^^^IMPORTANT – For the task you just did, you may have noticed that sets of four letters were
+^^^IMPORTANT ? For the task you just did, you may have noticed that sets of four letters were
 briefly flashed before each name.  One specific set of four letters preceded male names more often
 than female names.  A different set of four letters preceded female names more often.  As this task
 is repeated, these same relationships will continue.  However, because these associations are less
-than perfect, they may not be easy to learn.  However, you might try to learn – learning them may
+than perfect, they may not be easy to learn.  However, you might try to learn ? learning them may
 make it easier to respond rapidly in classifying the words.
 </page>
 
@@ -3630,7 +3630,7 @@ be visible, and sometimes the stimuli were more easily visible.
 of name (male or female) or one type of word (pleasant or unpleasant).
 ^^At other times in the experiment you were tested in to determine if you had learned the associations
 between the letter strings and the words or names.  Some of these tests did not depend on your being
-aware of having learned anything — the learning could be unconscious.
+aware of having learned anything ? the learning could be unconscious.
 ^^PRESS THE 'i' KEY FOR THE FINAL PAGE OF EXPLANATION.
 </page>
 
