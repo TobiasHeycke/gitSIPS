@@ -1,0 +1,3722 @@
+                     ****** 17 Apr 2015 *******  
+   [18Feb2016: correction 4 lines below of mistaken "acq_val_B2B1_375_3" to "acq_val_B2B1_33+42_3"]
+Two typos in UCC27 (inherited from UCC26) are corrected:
+1. Dropdowns "DHJF_g" "GKQX_g" and "BMVZ_g" had "male fenames" where they should have had "female names"; 
+   most likely subjects could spot and self-correct this error (it was not fixed during data collection). 
+2. block "acq_val_B2B1_33+42_3" did not have the line, "/bgstim=(unpleasant_left, pleasant_right)" as a 
+   result of which subjects did not have on-screen reminders of the sides for classification responses 
+   (however, they had completed 2 previous blocks with proper labels, so it was not a serious problem - 
+   and was not fixed during data collection).
+
+                     ****** 15 Apr 2015 *******
+Fixed formatting problems on survey pages that dropped fourth item off screen and made continuation impossible.
+Added new endlock (sent by Sean Draine) trial to the end of the debrief block, to lock screen.
+Required response is "~~"
+Preserved the same date in filename, but the date associated with the proper file will be April 15, 2015; 
+  date on the previous [obsolete] one was April 12, 2015.
+
+                     ****** 9 Apr 2015 *******
+               UCC27  (based on script for UCC26)
+Changes:  
+ Change UCS=075 trials from having 75ms CS duration to having 42ms CS + 33ms backward mask
+ Change UCS=375 trials from having 375ms CS duration to having 33ms mask + 33ms backward mask
+
+Counterbalance:
+ Order of the two types of acquisition and conditioning test tasks (42+33 vs 33+42)
+ Order of gender vs valence USs used for first of tasks
+ Order of assigning CS subalphabets to first vs second conditioning task
+ Assignment of male or pleasant to right vs left key for both tasks
+
+Additionally; visibility test trials need to be duplicated so that there can be both 42+33 and 33+42 versions
+
+
+Editing: 
+  In expt and acquisition block element labels:   _075_ -> _42+33_ ; _375_ -> _33+42_
+  In conditioning test block element labels:  test075 -> test42+33 ; test375 -> test33+42
+
+  In trial element labels: _075> -> _42+33>  ; _375> -> _33+42> 
+  In visibility blocks with 42+33 labels: visibility test trial element labels:  d75 -> d42+33
+  In visibility blocks with 33+42 labels: visibility test trial element labels:  d75 -> d33+42
+ 
+Timing in 42+33 acquisition and conditioning test trials should change:  
+    [0=blank1,focus; 500=fmask2; 800=blank2,XXXXXXX; 875=blank4,YYYYYYY]
+ -> [0=blank1,focus; 500=fmask2; 800=blank2,XXXXXXX; 842=bmask2; 875=blank4,YYYYYYY]
+The instruction to do this is:   875=blank4,  ->  842=bmask2; 875=blank4,
+  
+Timing in 33+42 acquisition and conditioning test trials should change:  
+    [0=blank1,focus; 500=blank2,XXXXXXX; 875=blank4,YYYYYYY]
+ -> [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,XXXXXXX; 875=blank4,YYYYYYY]
+The instructions to do this is: 500=blank2, -> 500=fmask2; 800=blank1,bmask2; 833=blank2,
+
+Timing in visibility test trials with d42+33 labels:
+     875=blank4,  ->  842=bmask2; 875=blank4,
+Timing in visibility test trials with d33+42 labels:
+     500=fmask2; 800=blank2,  ->  500=fmask2; 800=blank1,bmask2; 833=blank2,
+
+                     ****** 11 Feb 2013 *******
+               UCC26  (based on materials for UCC21)
+  replace CS duratiuons with full CS-US interval durations (rather than interval minus 17ms)
+
+Objective: Within-subjects comparison of conditioning produced by 
+  (a) short CS-US accompanied by knowledge of contingency
+  (b) long CS-US accompanied by knowledge of contingency Design 
+  Half of subjects start with long CS-US; half with short CS-US
+  All subjects end with visibility test using the CSs for their short CS-US
+  Counterbalance assignment of gender vs valence to short vs. long CS-US
+Procedure 
+  Use two acquisition blocks for long CS-US; four for short CS-US
+  Half of subjects tested (2 blocks) with short CS-USl half with long(same for both tasks)
+  Awareness test follows each conditioning test
+  Three visibility test blocks (preceded by one practice block with decreasing CS duration halfway)
+  Instruction about 100% consistency precedes 1st acquisition block of both tasks
+Conceptual design: 2 [within](CS duration) x 2 [within](gender v valence materials) x 2[between](CS-US duration for 
+  conditioning test [confounded with first CS-US duration])
+Counterbalancing design: 2[between](short CS-US first v second) x 2[between](gender vs. valence for first task)
+  x 2[between](A vs. B alphabet for targets) x 2[between](assignment of specific CS strings to left or right US category) 
+
+The same conditioning protocol will be used for both CS-US intervals, in particular:
+   Block 1: 24 trials 100% consistent (no window, error message; advance explanation of consistency)
+   Block 2: 24 trials 100% consistent (window 475, error message)
+   Block 3: 100% consistent; (window 450, error message) 24 trials for 375-ms CS; 48 trials for 75-ms CS
+   Blocks 4-5: 100% consistent (window 400) 24 trials for 375-ms CS; 48 trials for 75-ms CS
+   Blocks 6-7: test trials (50% contingency)  
+   Block 8 first contingency awareness test
+       CSduration changed for conditioning in Blocks 9-13 (but no change of CS duration in Block 12-13 test)
+   Block 9: 24 trials 100% consistent (no window, error message; advance explanation of consistency)
+   Block 10: 24 trials 100% consistent (window 475, no error message)
+   Block 11: 100% consistent; (window 450) (window 450, error message) 24 trials for 375-ms CS; 48 trials for 75-ms CS
+   Block 12-13: 100% consistent (window 400) 24 trials for 375-ms CS; 48 trials for 75-ms CS
+   Blocks 14-15: 50% consistent test, 400 window (CS duration same as in 1st test)
+   Block 16: second contingency awareness test
+   Block 17: visibility practice (tested with short CSs for all subjects)
+   Blocks 18-20: 3 visibility test blocks
+   Block 19: debtriefing
+
+			****** 11 Jan 2011 *******
+UCC21a:  Variation of the script of UCC20b, with these procedures:
+[**This is a corrected update from the description in UcsConditioning21a.11Jan2011.exp**]
+ Between-subjects design (orthogonal factors - 16 conditions): 
+  acquisition at either CS-US=75 or CS-US=375 (CS durations: 58 ms or 358 ms)
+  acquisition with either valence or gender 
+  contingency info (specific description of CS-US relation) prior to Block 1 vs. no info 
+  stimulus associated with right or left response categories  
+
+ The same conditioning protocol will be used for both CS-US intervals, in particular:
+   Block 1: 48 trials 100% consistent (no window, error message)
+   Block 2: Trials 1-32: 100% consistent; 33-48: 75% consistent (window: 475, error message)
+   Block 3: Trials 1-16: 100% consistent; 17-48: 75% consistent (window: 450, error message)
+   Block 4: contingency awareness test
+   Blocks 5-6: 48 trials 75% consistent   (window: 400, no error message)
+   Blocks 7-8 (extinction): 48 trials: 50% consistent (window: 400, no error message)
+   Block 9: Visibility test practice with long (133 ms) CS
+   Block 10: Visibility test practice with medium (100 ms) CS
+   Blocks 11-12: Visibility test with CS-US = 75 (CS duration = 58)
+Debriefing
+
+			****** 7 Dec 2010 (note added late, on 11 Jan 2011) *******
+UCC20b: Corrected errors in proportions of contingency-consistent trials in Blocks 1-3 of
+ conditions 3 and 4 of UCC20a.  Only conditions 3 and 4 were run in UCC20b.  These 
+ subjects replaced the corresponding conditions of UCC20a.
+
+			****** 15 Oct 2010 *******
+UCC20a:  Changes from UCC19c:
+ - each subject has only a single type (valence or gender) of conditioning (betw Ss, 2 levels)
+ - all conditioning is with CS-US=375; starting at 100% consistency
+ - introduce 80% consistency in last 16 trials of Block 2 of acquisition; last 32 trials of Block 3;
+    and all 48 trials of Blocks 4 and 5 to get conditioning test at CS-US=375
+ - give half of subjects awareness test after that block (other half are after CS-US=75 trials) 
+ - start CS-US=75 at this point (3 blocks)
+ - awareness test for remainder of subjects (betw Ss, 2 levels)
+ - visibility test at CS-US = 75.
+ - remaining 2-level factor is CS letter set paired with US (total of 8 counterbalance subjects)
+
+
+PRIME_A1:   NPLW    PRIME_A2:  DHJF
+PRIME_B1:   BMVZ    PRIME_B2:  GKQX
+
+*********************
+<data>
+/ format = tab
+/ columns = [date time subject trialcode blocknum trialnum response correct 
+             latency windowcenter trialdata trialdata trialdata]
+/ labels = true
+</data>
+
+<defaults>
+/ fontstyle = ("Arial", 5.3%, true, false, false, false, 5)
+/ screencolor = (170,170,170)
+/ txbgcolor = (255,255,255)
+/ txcolor = (0, 0, 0)
+/ validkeys = ("e" "i")
+/ endlock = true
+/ pretrialpause = 300
+/ posttrialpause = 300
+</defaults>
+
+*********************** 16 expt elements ********************
+<expt A1A2_42+33_gender_info>
+/ subjects = (1 of 16)
+/ preinstructions = (intro1, intro2, intro3, intro4, cattask)
+/ postinstructions = (end4)
+/ blocks = [1=info_acq_gen_A1A2_42+33_1; 2=acq_gen_A1A2_42+33_2; 3=acq_gen_A1A2_42+33_3; 4-5=acq_gen_A1A2_42+33_4;
+            6-7=test42+33_A12_femB_malB; 8=contingency_awareness_gender; 
+            9=info_acq_val_B1B2_33+42_1; 10=acq_val_B1B2_33+42_2; 11=acq_val_B1B2_33+42_3; 12-13=acq_val_B1B2_33+42_4; 
+           14-15=test42+33_B12_unpA_plsA; 16=contingency_awareness_valence; 
+           17=dA12_genB_pract1; 18=dA12_genB_pract2; 19-21=dA12_genB_42+33; 22=debrief]
+</expt>
+
+<expt A1A2_42+33_valence_info>
+/ subjects = (2 of 16)
+/ preinstructions = (intro1, intro2, intro3, intro4, cattask)
+/ postinstructions = (end4)
+/ blocks = [1=info_acq_val_A1A2_42+33_1; 2=acq_val_A1A2_42+33_2; 3=acq_val_A1A2_42+33_3; 4-5=acq_val_A1A2_42+33_4;
+            6-7=test42+33_A12_unpB_plsB; 8=contingency_awareness_valence;
+            9=info_acq_gen_B1B2_33+42_1; 10=acq_gen_B1B2_33+42_2; 11=acq_gen_B1B2_33+42_3; 12-13=acq_gen_B1B2_33+42_4; 
+           14-15=test42+33_B12_femA_malA; 16=contingency_awareness_gender; 
+           17=dA12_valB_pract1; 18=dA12_valB_pract2; 19-21=dA12_valB_42+33; 22=debrief]
+</expt>
+
+<expt A1A2_33+42_gender_info>
+/ subjects = (3 of 16)
+/ preinstructions = (intro1, intro2, intro3, intro4, cattask)
+/ postinstructions = (end4)
+/ blocks = [1=info_acq_gen_A1A2_33+42_1; 2=acq_gen_A1A2_33+42_2; 3=acq_gen_A1A2_33+42_3; 4-5=acq_gen_A1A2_33+42_4; 
+            6-7=test33+42_A12_femB_malB; 8=contingency_awareness_gender; 
+            9=info_acq_val_B1B2_42+33_1; 10=acq_val_B1B2_42+33_2; 11=acq_val_B1B2_42+33_3; 12-13=acq_val_B1B2_42+33_4; 
+           14-15=test33+42_B12_unpA_plsA; 16=contingency_awareness_valence; 
+           17=dB12_valA_pract1; 18=dB12_valA_pract2; 19-21=dB12_valA_33+42; 22=debrief]
+</expt>
+
+<expt A1A2_33+42_valence_info>
+/ subjects = (4 of 16)
+/ preinstructions = (intro1, intro2, intro3, intro4, cattask)
+/ postinstructions = (end4)
+/ blocks = [1=info_acq_val_A1A2_33+42_1; 2=acq_val_A1A2_33+42_2; 3=acq_val_A1A2_33+42_3; 4-5=acq_val_A1A2_33+42_4; 
+            6-7=test33+42_A12_unpB_plsB; 8=contingency_awareness_valence; 
+            9=info_acq_gen_B1B2_42+33_1; 10=acq_gen_B1B2_42+33_2; 11=acq_gen_B1B2_42+33_3; 12-13=acq_gen_B1B2_42+33_4; 
+           14-15=test33+42_B12_femA_malA; 16=contingency_awareness_gender;
+           17=dB12_genA_pract1; 18=dB12_genA_pract2; 19-21=dB12_genA_33+42; 22=debrief]
+</expt>
+
+<expt B1B2_42+33_valence_info>
+/ subjects = (5 of 16)
+/ preinstructions = (intro1, intro2, intro3, intro4, cattask)
+/ postinstructions = (end4)
+/ blocks = [1=info_acq_val_B1B2_42+33_1; 2=acq_val_B1B2_42+33_2; 3=acq_val_B1B2_42+33_3; 4-5=acq_val_B1B2_42+33_4;
+            6-7=test42+33_B12_unpA_plsA; 8=contingency_awareness_valence;
+            9=info_acq_gen_A1A2_33+42_1; 10=acq_gen_A1A2_33+42_2; 11=acq_gen_A1A2_33+42_3; 12-13=acq_gen_A1A2_33+42_4; 
+           14-15=test42+33_A12_femB_malB; 16=contingency_awareness_gender; 
+           17=dB12_valA_pract1; 18=dB12_valA_pract2; 19-21=dB12_valA_42+33; 22=debrief]
+</expt>
+
+<expt B1B2_42+33_gender_info>
+/ subjects = (6 of 16)
+/ preinstructions = (intro1, intro2, intro3, intro4, cattask)
+/ postinstructions = (end4)
+/ blocks = [1=info_acq_gen_B1B2_42+33_1; 2=acq_gen_B1B2_42+33_2; 3=acq_gen_B1B2_42+33_3; 4-5=acq_gen_B1B2_42+33_4;
+            6-7=test42+33_B12_femA_malA; 8=contingency_awareness_gender; 
+            9=info_acq_val_A1A2_33+42_1; 10=acq_val_A1A2_33+42_2; 11=acq_val_A1A2_33+42_3; 12-13=acq_val_A1A2_33+42_4; 
+           14-15=test42+33_A12_unpB_plsB; 16=contingency_awareness_valence; 
+           17=dB12_genA_pract1; 18=dB12_genA_pract2; 19-21=dB12_genA_42+33; 22=debrief]
+</expt>
+
+<expt B1B2_33+42_valence_info>
+/ subjects = (7 of 16)
+/ preinstructions = (intro1, intro2, intro3, intro4, cattask)
+/ postinstructions = (end4)
+/ blocks = [1=info_acq_val_B1B2_33+42_1; 2=acq_val_B1B2_33+42_2; 3=acq_val_B1B2_33+42_3; 4-5=acq_val_B1B2_33+42_4; 
+            6-7=test33+42_B12_unpA_plsA; 8=contingency_awareness_valence; 
+            9=info_acq_gen_A1A2_42+33_1; 10=acq_gen_A1A2_42+33_2; 11=acq_gen_A1A2_42+33_3; 12-13=acq_gen_A1A2_42+33_4; 
+           14-15=test33+42_A12_femB_malB; 16=contingency_awareness_gender;
+           17=dA12_genB_pract1; 18=dA12_genB_pract2; 19-21=dA12_genB_33+42; 22=debrief]
+</expt>
+
+<expt B1B2_33+42_gender_info>
+/ subjects = (8 of 16)
+/ preinstructions = (intro1, intro2, intro3, intro4, cattask)
+/ postinstructions = (end4)
+/ blocks = [1=info_acq_gen_B1B2_33+42_1; 2=acq_gen_B1B2_33+42_2; 3=acq_gen_B1B2_33+42_3; 4-5=acq_gen_B1B2_33+42_4;
+            6-7=test33+42_B12_femA_malA; 8=contingency_awareness_gender;
+            9=info_acq_val_A1A2_42+33_1; 10=acq_val_A1A2_42+33_2; 11=acq_val_A1A2_42+33_3; 12-13=acq_val_A1A2_42+33_4; 
+           14-15=test33+42_A12_unpB_plsB; 16=contingency_awareness_valence;
+           17=dA12_valB_pract1; 18=dA12_valB_pract2; 19-21=dA12_valB_33+42; 22=debrief]
+</expt>
+
+
+**********************************
+<expt A2A1_42+33_gender_info>
+/ subjects = (9 of 16)
+/ preinstructions = (intro1, intro2, intro3, intro4, cattask)
+/ postinstructions = (end4)
+/ blocks = [1=info_acq_gen_A2A1_42+33_1; 2=acq_gen_A2A1_42+33_2; 3=acq_gen_A2A1_42+33_3; 4-5=acq_gen_A2A1_42+33_4;
+            6-7=test42+33_A12_femB_malB; 8=contingency_awareness_gender; 
+            9=info_acq_val_B2B1_33+42_1; 10=acq_val_B2B1_33+42_2; 11=acq_val_B2B1_33+42_3; 12-13=acq_val_B2B1_33+42_4; 
+           14-15=test42+33_B12_unpA_plsA; 16=contingency_awareness_valence; 
+           17=dA12_genB_pract1; 18=dA12_genB_pract2; 19-21=dA12_genB_42+33; 22=debrief]
+</expt>
+
+<expt A2A1_42+33_valence_info>
+/ subjects = (10 of 16)
+/ preinstructions = (intro1, intro2, intro3, intro4, cattask)
+/ postinstructions = (end4)
+/ blocks = [1=info_acq_val_A2A1_42+33_1; 2=acq_val_A2A1_42+33_2; 3=acq_val_A2A1_42+33_3; 4-5=acq_val_A2A1_42+33_4;
+            6-7=test42+33_A12_unpB_plsB; 8=contingency_awareness_valence;
+            9=info_acq_gen_B2B1_33+42_1; 10=acq_gen_B2B1_33+42_2; 11=acq_gen_B2B1_33+42_3; 12-13=acq_gen_B2B1_33+42_4; 
+           14-15=test42+33_B12_femA_malA; 16=contingency_awareness_gender; 
+           17=dA12_valB_pract1; 18=dA12_valB_pract2; 19-21=dA12_valB_42+33; 22=debrief]
+</expt>
+
+<expt A2A1_33+42_gender_info>
+/ subjects = (11 of 16)
+/ preinstructions = (intro1, intro2, intro3, intro4, cattask)
+/ postinstructions = (end4)
+/ blocks = [1=info_acq_gen_A2A1_33+42_1; 2=acq_gen_A2A1_33+42_2; 3=acq_gen_A2A1_33+42_3; 4-5=acq_gen_A2A1_33+42_4; 
+            6-7=test33+42_A12_femB_malB; 8=contingency_awareness_gender; 
+            9=info_acq_val_B2B1_42+33_1; 10=acq_val_B2B1_42+33_2; 11=acq_val_B2B1_42+33_3; 12-13=acq_val_B2B1_42+33_4; 
+           14-15=test33+42_B12_unpA_plsA; 16=contingency_awareness_valence; 
+           17=dB12_valA_pract1; 18=dB12_valA_pract2; 19-21=dB12_valA_33+42; 22=debrief]
+</expt>
+
+<expt A2A1_33+42_valence_info>
+/ subjects = (12 of 16)
+/ preinstructions = (intro1, intro2, intro3, intro4, cattask)
+/ postinstructions = (end4)
+/ blocks = [1=info_acq_val_A2A1_33+42_1; 2=acq_val_A2A1_33+42_2; 3=acq_val_A2A1_33+42_3; 4-5=acq_val_A2A1_33+42_4; 
+            6-7=test33+42_A12_unpB_plsB; 8=contingency_awareness_valence; 
+            9=info_acq_gen_B2B1_42+33_1; 10=acq_gen_B2B1_42+33_2; 11=acq_gen_B2B1_42+33_3; 12-13=acq_gen_B2B1_42+33_4; 
+           14-15=test33+42_B12_femA_malA; 16=contingency_awareness_gender;
+           17=dB12_genA_pract1; 18=dB12_genA_pract2; 19-21=dB12_genA_33+42; 22=debrief]
+</expt>
+
+<expt B2B1_42+33_valence_info>
+/ subjects = (13 of 16)
+/ preinstructions = (intro1, intro2, intro3, intro4, cattask)
+/ postinstructions = (end4)
+/ blocks = [1=info_acq_val_B2B1_42+33_1; 2=acq_val_B2B1_42+33_2; 3=acq_val_B2B1_42+33_3; 4-5=acq_val_B2B1_42+33_4;
+            6-7=test42+33_B12_unpA_plsA; 8=contingency_awareness_valence;
+            9=info_acq_gen_A2A1_33+42_1; 10=acq_gen_A2A1_33+42_2; 11=acq_gen_A2A1_33+42_3; 12-13=acq_gen_A2A1_33+42_4; 
+           14-15=test42+33_A12_femB_malB; 16=contingency_awareness_gender; 
+           17=dB12_valA_pract1; 18=dB12_valA_pract2; 19-21=dB12_valA_42+33; 22=debrief]
+</expt>
+
+<expt B2B1_42+33_gender_info>
+/ subjects = (14 of 16)
+/ preinstructions = (intro1, intro2, intro3, intro4, cattask)
+/ postinstructions = (end4)
+/ blocks = [1=info_acq_gen_B2B1_42+33_1; 2=acq_gen_B2B1_42+33_2; 3=acq_gen_B2B1_42+33_3; 4-5=acq_gen_B2B1_42+33_4;
+            6-7=test42+33_B12_femA_malA; 8=contingency_awareness_gender; 
+            9=info_acq_val_A2A1_33+42_1; 10=acq_val_A2A1_33+42_2; 11=acq_val_A2A1_33+42_3; 12-13=acq_val_A2A1_33+42_4; 
+           14-15=test42+33_A12_unpB_plsB; 16=contingency_awareness_valence; 
+           17=dB12_genA_pract1; 18=dB12_genA_pract2; 19-21=dB12_genA_42+33; 22=debrief]
+</expt>
+
+<expt B2B1_33+42_valence_info>
+/ subjects = (15 of 16)
+/ preinstructions = (intro1, intro2, intro3, intro4, cattask)
+/ postinstructions = (end4)
+/ blocks = [1=info_acq_val_B2B1_33+42_1; 2=acq_val_B2B1_33+42_2; 3=acq_val_B2B1_33+42_3; 4-5=acq_val_B2B1_33+42_4; 
+            6-7=test33+42_B12_unpA_plsA; 8=contingency_awareness_valence; 
+            9=info_acq_gen_A2A1_42+33_1; 10=acq_gen_A2A1_42+33_2; 11=acq_gen_A2A1_42+33_3; 12-13=acq_gen_A2A1_42+33_4; 
+           14-15=test33+42_A12_femB_malB; 16=contingency_awareness_gender;
+           17=dA12_genB_pract1; 18=dA12_genB_pract2; 19-21=dA12_genB_33+42; 22=debrief]
+</expt>
+
+<expt B2B1_33+42_gender_info>
+/ subjects = (16 of 16)
+/ preinstructions = (intro1, intro2, intro3, intro4, cattask)
+/ postinstructions = (end4)
+/ blocks = [1=info_acq_gen_B2B1_33+42_1; 2=acq_gen_B2B1_33+42_2; 3=acq_gen_B2B1_33+42_3; 4-5=acq_gen_B2B1_33+42_4;
+            6-7=test33+42_B12_femA_malA; 8=contingency_awareness_gender;
+            9=info_acq_val_A2A1_42+33_1; 10=acq_val_A2A1_42+33_2; 11=acq_val_A2A1_42+33_3; 12-13=acq_val_A2A1_42+33_4; 
+           14-15=test33+42_A12_unpB_plsB; 16=contingency_awareness_valence;
+           17=dA12_valB_pract1; 18=dA12_valB_pract2; 19-21=dA12_valB_33+42; 22=debrief]
+</expt>
+
+**********************************
+
+***************** blocks newly created from former UCC21 blocks ***********************
+Block 1 is 24 trials with no window and error feedback
+<block info_acq_gen_A1A2_42+33_1>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (ipract1g, consistency_info_g)
+/ trials = [1-8=random(LA1femB_42+33, RA2malB_42+33);
+           9-16=random(LA1femB_42+33, RA2malB_42+33);
+           17-24=random(LA1femB_42+33, RA2malB_42+33)]
+/ errormessage = true(error,200)
+/ blockfeedback = (correct)
+</block>
+
+Block 2 is 24 trials with 475 window and error feedback
+<block acq_gen_A1A2_42+33_2>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (ipract2ga, ipract2b)
+/ trials = [1-8=random(LA1femB_42+33, RA2malB_42+33);
+            9-16=random(LA1femB_42+33, RA2malB_42+33);
+           17-24=random(LA1femB_42+33, RA2malB_42+33)]
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w475
+</block>
+
+Block 3 is 48 trials with 450 window and error feedback
+<block acq_gen_A1A2_42+33_3>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (ipract3a)
+/ trials = [1-16=random(LA1femB_42+33, RA2malB_42+33);
+           17-32=random(LA1femB_42+33, RA2malB_42+33);
+           33-48=random(LA1femB_42+33, RA2malB_42+33)]
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w450
+</block>
+
+Blocka 4-5 are 48 trials with 400 window and no error feedback
+<block acq_gen_A1A2_42+33_4>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (repeattask)
+/ trials = [1-16=random(LA1femB_42+33, RA2malB_42+33);
+           17-32=random(LA1femB_42+33, RA2malB_42+33);
+           33-48=random(LA1femB_42+33, RA2malB_42+33)]
+/ blockfeedback = (window, correct)
+/ response = w400
+</block>
+
+Block 1 is 24 trials with no window and error feedback
+<block info_acq_val_A1A2_33+42_1>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (ipract1v, consistency_info_v)
+/ trials = [1-8=random(LA1unpB_33+42, RA2plsB_33+42);
+            9-16=random(LA1unpB_33+42, RA2plsB_33+42);
+           17-24=random(LA1unpB_33+42, RA2plsB_33+42)]
+/ errormessage = true(error,200)
+/ blockfeedback = (correct)
+</block>
+
+
+Block 2 is 24 trials with 475 window and error feedback
+<block acq_val_A1A2_33+42_2>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (ipract2va, ipract2b)
+/ trials = [1-8=random(LA1unpB_33+42, RA2plsB_33+42);
+            9-16=random(LA1unpB_33+42, RA2plsB_33+42);
+           17-24=random(LA1unpB_33+42, RA2plsB_33+42)]
+
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w475
+</block>
+
+Block 3 is 24 trials with 450 window and error feedback
+<block acq_val_A1A2_33+42_3>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (ipract3a)
+/ trials = [1-8=random(LA1unpB_33+42, RA2plsB_33+42);
+            9-16=random(LA1unpB_33+42, RA2plsB_33+42);
+           17-24=random(LA1unpB_33+42, RA2plsB_33+42)]
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w450
+</block>
+
+Blocks 4-5 are 24 trials with 400 window and no error feedback
+<block acq_val_A1A2_33+42_4>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (repeattask)
+/ trials = [1-8=random(LA1unpB_33+42, RA2plsB_33+42);
+            9-16=random(LA1unpB_33+42, RA2plsB_33+42);
+           17-24=random(LA1unpB_33+42, RA2plsB_33+42)]
+/ blockfeedback = (window, correct)
+/ response = w400
+</block>
+
+This block changed by shortening duration within one practice block - no 2nd practice block)
+<block dA12_genB_pract>
+/ bgstim = (A2_left, A1_right)
+/ preinstructions = (dApract1, dpract2)
+/ postinstructions = (dMpract4)
+/ trials = [1-8=random(dL_LLA2genB, dL_LRA2genB, dL_RLA1genB, dL_RRA1genB);
+            9-16=random(dM_LLA2genB, dM_LRA2genB, dM_RLA1genB, dM_RRA1genB)]
+/ blockfeedback = (correct)
+/ errormessage = true(error,200)
+</block>
+
+<block dA12_valB_pract>
+/ bgstim = (A2_left, A1_right)
+/ preinstructions = (dApract1, dpract2)
+/ postinstructions = (dMpract4)
+/ trials = [1-8=random(dL_LLA2valB, dL_LRA2valB, dL_RLA1valB, dL_RRA1valB);
+            9-16=random(dM_LLA2valB, dM_LRA2valB, dM_RLA1valB, dM_RRA1valB)]
+/ blockfeedback = (correct)
+/ errormessage = true(error,200)
+</block>
+
+<block dB12_genA_pract>
+/ bgstim = (B2_left, B1_right)
+/ preinstructions = (dBpract1, dpract2)
+/ postinstructions = (dMpract4)
+/ trials = [1-8=random(dL_LLB2genA, dL_LRB2genA, dL_RLB1genA, dL_RRB1genA);
+            9-16=random(dM_LLB2genA, dM_LRB2genA, dM_RLB1genA, dM_RRB1genA)]
+/ blockfeedback = (correct)
+/ errormessage = true(error,200)
+</block>
+
+<block dB12_valA_pract>
+/ bgstim = (B2_left, B1_right)
+/ preinstructions = (dBpract1, dpract2)
+/ postinstructions = (dMpract4)
+/ trials = [1-8=random(dL_LLB2valA, dL_LRB2valA, dL_RLB1valA, dL_RRB1valA);
+            9-16=random(dM_LLB2valA, dM_LRB2valA, dM_RLB1valA, dM_RRB1valA)]
+/ blockfeedback = (correct)
+/ errormessage = true(error,200)
+</block>
+
+***************************************************************************************************
+<block info_acq_val_A2A1_42+33_1>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (ipract1v, consistency_info_v)
+/ trials = [1-8=random(LA2unpB_42+33, RA1plsB_42+33);
+            9-16=random(LA2unpB_42+33, RA1plsB_42+33);
+           17-24=random(LA2unpB_42+33, RA1plsB_42+33)]
+/ errormessage = true(error,200)
+/ blockfeedback = (correct)
+</block>
+
+<block acq_val_A2A1_42+33_2>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (ipract2va, ipract2b)
+/ trials = [1-8=random(LA2unpB_42+33, RA1plsB_42+33);
+            9-16=random(LA2unpB_42+33, RA1plsB_42+33);
+           17-24=random(LA2unpB_42+33, RA1plsB_42+33)]
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w475
+</block>
+
+<block acq_val_A2A1_42+33_3>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (ipract3a)
+/ trials = [1-16=random(LA2unpB_42+33, RA1plsB_42+33);
+           17-32=random(LA2unpB_42+33, RA1plsB_42+33);
+           33-48=random(LA2unpB_42+33, RA1plsB_42+33)]
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w450
+</block>
+
+<block acq_val_A2A1_42+33_4>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (repeattask)
+/ trials = [1-16=random(LA2unpB_42+33, RA1plsB_42+33);
+           17-32=random(LA2unpB_42+33, RA1plsB_42+33);
+           33-48=random(LA2unpB_42+33, RA1plsB_42+33)]
+/ blockfeedback = (window, correct)
+/ response = w400
+</block>
+
+
+***************************************************************************************************
+
+***************************************************************************************************
+
+
+***************************************************************************************************
+
+***************************************************************************************************
+
+
+***************************************************************************************************
+
+***************************************************************************************************
+
+
+***************************************************************************************************
+
+********************************************************************************
+
+
+
+<response w400>
+/ mode = window
+/ rwcenter = 400
+/ rwmincenter = 400
+/ rwmaxcenter = 400
+/ rwwidth =133
+/ rwstimulus = windowstim
+/ rwhitstimulus = hitwindowstim
+/ rwhitduration = 300
+</response>
+
+<response w400dir>
+/ mode = window
+/ rwcenter = 400
+/ rwwidth =133
+/ rwstimulus = windowstim
+/ rwhitstimulus = windowstim
+/ rwhitduration = 300
+</response>
+
+<response w450>
+/ mode = window
+/ rwcenter = 450
+/ rwmincenter = 450
+/ rwmaxcenter = 450
+/ rwwidth =133
+/ rwstimulus = windowstim
+/ rwhitstimulus = hitwindowstim
+/ rwhitduration = 300
+</response>
+
+<response w475>
+/ mode = window
+/ rwcenter = 475
+/ rwmincenter = 475
+/ rwmaxcenter = 475
+/ rwwidth =133
+/ rwstimulus = windowstim
+/ rwhitstimulus = hitwindowstim
+/ rwhitduration = 300
+</response>
+
+*************** trial blocks ***********************
+*********** practice trial blocks *****************
+
+
+******************************************************************************************************** 
+** BLOCKS LABELING FOR UCC12 & UCC14
+Acquisition blocks (first 8 blocks; 48 trials each) are named as follows, by character position in left
+to right sequence.
+ 1. a=acquisition; e=extinction
+ 2. condition number (1-8)
+ 3. underscore separator
+ 4. 4 letters from (stuvwxyz), each coding a pair of letters, as follows
+      w=RQ; y=GM; x=MG; z=QR; s=rq; u=gm; t=mg; v=qr
+     1st letter codes pair on left side associated with male; 2nd letter codes pair on right side assoc w male
+     3rd letter codes pair on left side associated with female; 4th letter codes pair on right side
+           assoc w female
+ 5. underscore separator
+ 6. 1=1st acq block; 2=2nd acq block; 3=3rd & 4th acq block; 4=acq blocks 5-8 (Phase 2)
+
+Extinction (4 blocks of 48 trials) block names start with "ext"; next 2 digits are the conditions in which
+     each is used
+
+Visibility test blocks and trials are slightly modified from UCC11 (see note at top).
+
+Sets of male and female names used in visibility tests are same as those used in acquisition 
+These are names from Set A (A = adfhjlnopwy) for Conditions 1-2
+Names from Set B (B = bcegikmqrstuvxz) are not used in UCC12 (which has limited counterbalancing)
+*******************************************************************************************************
+
+********************************** ACQUISITION BLOCKS *******************************
+
+Acquisition - valence - A1-left, A2-right
+************************
+<block info_acq_val_A1A2_42+33_1>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (ipract1v, consistency_info_v)
+/ trials = [1-8=random(LA1unpB_42+33, RA2plsB_42+33);
+            9-16=random(LA1unpB_42+33, RA2plsB_42+33);
+           17-24=random(LA1unpB_42+33, RA2plsB_42+33)]
+/ errormessage = true(error,200)
+/ blockfeedback = (correct)
+</block>
+
+<block acq_val_A1A2_42+33_2>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (ipract2va, ipract2b)
+/ trials = [1-8=random(LA1unpB_42+33, RA2plsB_42+33);
+            9-16=random(LA1unpB_42+33, RA2plsB_42+33);
+           17-24=random(LA1unpB_42+33, RA2plsB_42+33)]
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w475
+</block>
+
+<block acq_val_A1A2_42+33_3>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (ipract3a)
+/ trials = [1-16=random(LA1unpB_42+33, RA2plsB_42+33);
+           17-32=random(LA1unpB_42+33, RA2plsB_42+33);
+           33-48=random(LA1unpB_42+33, RA2plsB_42+33)]
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w450
+</block>
+
+<block acq_val_A1A2_42+33_4>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (repeattask)
+/ trials = [1-16=random(LA1unpB_42+33, RA2plsB_42+33);
+           17-32=random(LA1unpB_42+33, RA2plsB_42+33);
+           33-48=random(LA1unpB_42+33, RA2plsB_42+33)]
+/ blockfeedback = (window, correct)
+/ response = w400
+</block>
+
+Acquisition - gender - A2-left, A1-right
+************************
+<block info_acq_gen_A2A1_42+33_1>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (ipract1g, consistency_info_g)
+/ trials = [1-8=random(LA2femB_42+33, RA1malB_42+33);
+            9-16=random(LA2femB_42+33, RA1malB_42+33);
+           17-24=random(LA2femB_42+33, RA1malB_42+33)]
+/ errormessage = true(error,200)
+/ blockfeedback = (correct)
+</block>
+
+<block acq_gen_A2A1_42+33_2>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (ipract2ga, ipract2b)
+/ trials = [1-8=random(LA2femB_42+33, RA1malB_42+33);
+            9-16=random(LA2femB_42+33, RA1malB_42+33);
+           17-24=random(LA2femB_42+33, RA1malB_42+33)]
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w475
+</block>
+
+<block acq_gen_A2A1_42+33_3>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (ipract3a)
+/ trials = [1-16=random(LA2femB_42+33, RA1malB_42+33);
+           17-32=random(LA2femB_42+33, RA1malB_42+33);
+           33-48=random(LA2femB_42+33, RA1malB_42+33)]
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w450
+</block>
+
+<block acq_gen_A2A1_42+33_4>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (repeattask)
+/ trials = [1-16=random(LA2femB_42+33, RA1malB_42+33);
+           17-32=random(LA2femB_42+33, RA1malB_42+33);
+           33-48=random(LA2femB_42+33, RA1malB_42+33)]
+/ blockfeedback = (window, correct)
+/ response = w400
+</block>
+***************************************************************
+
+
+
+Acquisition - valence - B1-left, B2-right
+************************
+<block info_acq_val_B1B2_42+33_1>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (ipract1v, consistency_info_v)
+/ trials = [1-8=random(LB1unpA_42+33, RB2plsA_42+33);
+            9-16=random(LB1unpA_42+33, RB2plsA_42+33);
+           17-24=random(LB1unpA_42+33, RB2plsA_42+33)]
+/ errormessage = true(error,200)
+/ blockfeedback = (correct)
+</block>
+
+<block acq_val_B1B2_42+33_2>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (ipract2va, ipract2b)
+/ trials = [1-8=random(LB1unpA_42+33, RB2plsA_42+33);
+            9-16=random(LB1unpA_42+33, RB2plsA_42+33);
+           17-24=random(LB1unpA_42+33, RB2plsA_42+33)]
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w475
+</block>
+
+<block acq_val_B1B2_42+33_3>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (ipract3a)
+/ trials = [1-16=random(LB1unpA_42+33, RB2plsA_42+33);
+           17-32=random(LB1unpA_42+33, RB2plsA_42+33);
+           33-48=random(LB1unpA_42+33, RB2plsA_42+33)]
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w450
+</block>
+
+<block acq_val_B1B2_42+33_4>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (repeattask)
+/ trials = [1-16=random(LB1unpA_42+33, RB2plsA_42+33);
+           17-32=random(LB1unpA_42+33, RB2plsA_42+33);
+           33-48=random(LB1unpA_42+33, RB2plsA_42+33)]
+/ blockfeedback = (window, correct)
+/ response = w400
+</block>
+
+Acquisition - valence - B2-left, B1-right
+************************
+
+<block info_acq_val_B2B1_42+33_1>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (ipract1v, consistency_info_v)
+/ trials = [1-8=random(LB2unpA_42+33, RB1plsA_42+33);
+            9-16=random(LB2unpA_42+33, RB1plsA_42+33);
+           17-24=random(LB2unpA_42+33, RB1plsA_42+33)]
+/ errormessage = true(error,200)
+/ blockfeedback = (correct)
+</block>
+
+<block acq_val_B2B1_42+33_2>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (ipract2va, ipract2b)
+/ trials = [1-8=random(LB2unpA_42+33, RB1plsA_42+33);
+            9-16=random(LB2unpA_42+33, RB1plsA_42+33);
+           17-24=random(LB2unpA_42+33, RB1plsA_42+33)]
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w475
+</block>
+
+<block acq_val_B2B1_42+33_3>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (ipract3a)
+/ trials = [1-16=random(LB2unpA_42+33, RB1plsA_42+33);
+           17-32=random(LB2unpA_42+33, RB1plsA_42+33);
+           33-48=random(LB2unpA_42+33, RB1plsA_42+33)]
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w450
+</block>
+
+<block acq_val_B2B1_42+33_4>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (repeattask)
+/ trials = [1-16=random(LB2unpA_42+33, RB1plsA_42+33, LB2unpA_42+33, RB1plsA_42+33, LB2unpA_42+33, RB1plsA_42+33,
+                        LB1unpA_42+33, RB2plsA_42+33);
+           17-32=random(LB2unpA_42+33, RB1plsA_42+33);
+           33-48=random(LB2unpA_42+33, RB1plsA_42+33)]
+/ blockfeedback = (window, correct)
+/ response = w400
+</block>
+
+
+Acquisition - gender - B1-left, B2-right
+************************
+<block info_acq_gen_B1B2_42+33_1>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (ipract1g, consistency_info_g)
+/ trials = [1-8=random(LB1femA_42+33, RB2malA_42+33);
+            9-16=random(LB1femA_42+33, RB2malA_42+33);
+           17-24=random(LB1femA_42+33, RB2malA_42+33)]
+/ errormessage = true(error,200)
+/ blockfeedback = (correct)
+</block>
+
+<block acq_gen_B1B2_42+33_2>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (ipract2ga, ipract2b)
+/ trials = [1-8=random(LB1femA_42+33, RB2malA_42+33);
+            9-16=random(LB1femA_42+33, RB2malA_42+33);
+           17-24=random(LB1femA_42+33, RB2malA_42+33)]
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w475
+</block>
+
+<block acq_gen_B1B2_42+33_3>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (ipract3a)
+/ trials = [1-16=random(LB1femA_42+33, RB2malA_42+33);
+           17-32=random(LB1femA_42+33, RB2malA_42+33);
+           33-48=random(LB1femA_42+33, RB2malA_42+33)]
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w450
+</block>
+
+<block acq_gen_B1B2_42+33_4>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (repeattask)
+/ trials = [1-16=random(LB1femA_42+33, RB2malA_42+33, LB1femA_42+33, RB2malA_42+33, LB1femA_42+33, RB2malA_42+33,
+                        LB2femA_42+33, RB1malA_42+33);
+           17-32=random(LB1femA_42+33, RB2malA_42+33);
+           33-48=random(LB1femA_42+33, RB2malA_42+33)]
+/ blockfeedback = (window, correct)
+/ response = w400
+</block>
+
+Acquisition - gender - B2-left, B1-right
+************************
+<block info_acq_gen_B2B1_42+33_1>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (ipract1g, consistency_info_g)
+/ trials = [1-8=random(LB2femA_42+33, RB1malA_42+33);
+            9-16=random(LB2femA_42+33, RB1malA_42+33);
+           17-24=random(LB2femA_42+33, RB1malA_42+33)]
+/ errormessage = true(error,200)
+/ blockfeedback = (correct)
+</block>
+
+<block acq_gen_B2B1_42+33_2>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (ipract2ga, ipract2b)
+/ trials = [1-8=random(LB2femA_42+33, RB1malA_42+33);
+            9-16=random(LB2femA_42+33, RB1malA_42+33);
+           17-24=random(LB2femA_42+33, RB1malA_42+33)]
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w475
+</block>
+
+<block acq_gen_B2B1_42+33_3>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (ipract3a)
+/ trials = [1-16=random(LB2femA_42+33, RB1malA_42+33);
+           17-32=random(LB2femA_42+33, RB1malA_42+33);
+           33-48=random(LB2femA_42+33, RB1malA_42+33)]
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w450
+</block>
+
+<block acq_gen_B2B1_42+33_4>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (repeattask)
+/ trials = [1-16=random(LB2femA_42+33, RB1malA_42+33);
+           17-32=random(LB2femA_42+33, RB1malA_42+33);
+           33-48=random(LB2femA_42+33, RB1malA_42+33)]
+/ blockfeedback = (window, correct)
+/ response = w400
+</block>
+
+check that instructions work equally for both short and long durations
+
+Acquisition - valence - A1-left, A2-right
+************************
+<block noinfo_acq_val_A1A2_33+42_1>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (ipract1v)
+/ trials = [1-8=random(LA1unpB_33+42, RA2plsB_33+42);
+            9-16=random(LA1unpB_33+42, RA2plsB_33+42);
+           17-24=random(LA1unpB_33+42, RA2plsB_33+42)]
+/ errormessage = true(error,200)
+/ blockfeedback = (correct)
+</block>
+
+Acquisition - valence - A2-left, A1-right
+************************
+<block info_acq_val_A2A1_33+42_1>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (ipract1v, consistency_info_v)
+/ trials = [1-8=random(LA2unpB_33+42, RA1plsB_33+42);
+            9-16=random(LA2unpB_33+42, RA1plsB_33+42);
+           17-24=random(LA2unpB_33+42, RA1plsB_33+42)]
+/ errormessage = true(error,200)
+/ blockfeedback = (correct)
+</block>
+
+<block acq_val_A2A1_33+42_2>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (ipract2va, ipract2b)
+/ trials = [1-8=random(LA2unpB_33+42, RA1plsB_33+42);
+            9-16=random(LA2unpB_33+42, RA1plsB_33+42);
+           17-24=random(LA2unpB_33+42, RA1plsB_33+42)]
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w475
+</block>
+
+<block acq_val_A2A1_33+42_3>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (ipract3a)
+/ trials = [1-8=random(LA2unpB_33+42, RA1plsB_33+42);
+            9-16=random(LA2unpB_33+42, RA1plsB_33+42);
+           17-24=random(LA2unpB_33+42, RA1plsB_33+42)]
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w450
+</block>
+
+<block acq_val_A2A1_33+42_4>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (repeattask)
+/ trials = [1-8=random(LA2unpB_33+42, RA1plsB_33+42);
+            9-16=random(LA2unpB_33+42, RA1plsB_33+42);
+           17-24=random(LA2unpB_33+42, RA1plsB_33+42)]
+/ blockfeedback = (window, correct)
+/ response = w400
+</block>
+
+
+Acquisition - gender - A1-left, A2-right
+************************
+
+<block info_acq_gen_A1A2_33+42_1>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (ipract1g, consistency_info_g)
+/ trials = [1-8=random(LA1femB_33+42, RA2malB_33+42);
+            9-16=random(LA1femB_33+42, RA2malB_33+42);
+           17-24=random(LA1femB_33+42, RA2malB_33+42)]
+/ errormessage = true(error,200)
+/ blockfeedback = (correct)
+</block>
+
+<block acq_gen_A1A2_33+42_2>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (ipract2ga, ipract2b)
+/ trials = [1-8=random(LA1femB_33+42, RA2malB_33+42);
+            9-16=random(LA1femB_33+42, RA2malB_33+42);
+           17-24=random(LA1femB_33+42, RA2malB_33+42)]
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w475
+</block>
+
+<block acq_gen_A1A2_33+42_3>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (ipract3a)
+/ trials = [1-8=random(LA1femB_33+42, RA2malB_33+42);
+            9-16=random(LA1femB_33+42, RA2malB_33+42);
+           17-24=random(LA1femB_33+42, RA2malB_33+42)]
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w450
+</block>
+
+<block acq_gen_A1A2_33+42_4>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (repeattask)
+/ trials = [1-8=random(LA1femB_33+42, RA2malB_33+42);
+            9-16=random(LA1femB_33+42, RA2malB_33+42);
+           17-24=random(LA1femB_33+42, RA2malB_33+42)]
+/ blockfeedback = (window, correct)
+/ response = w400
+</block>
+
+Acquisition - gender - A2-left, A1-right
+************************
+<block info_acq_gen_A2A1_33+42_1>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (ipract1g, consistency_info_g)
+/ trials = [1-8=random(LA2femB_33+42, RA1malB_33+42);
+            9-16=random(LA2femB_33+42, RA1malB_33+42);
+           17-24=random(LA2femB_33+42, RA1malB_33+42)]
+/ errormessage = true(error,200)
+/ blockfeedback = (correct)
+</block>
+
+<block acq_gen_A2A1_33+42_2>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (ipract2ga, ipract2b)
+/ trials = [1-8=random(LA2femB_33+42, RA1malB_33+42);
+            9-16=random(LA2femB_33+42, RA1malB_33+42);
+           17-24=random(LA2femB_33+42, RA1malB_33+42)]
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w475
+</block>
+
+<block acq_gen_A2A1_33+42_3>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (ipract3a)
+/ trials = [1-8=random(LA2femB_33+42, RA1malB_33+42);
+            9-16=random(LA2femB_33+42, RA1malB_33+42);
+           17-24=random(LA2femB_33+42, RA1malB_33+42)]
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w450
+</block>
+
+<block acq_gen_A2A1_33+42_4>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (repeattask)
+/ trials = [1-8=random(LA2femB_33+42, RA1malB_33+42);
+            9-16=random(LA2femB_33+42, RA1malB_33+42);
+           17-24=random(LA2femB_33+42, RA1malB_33+42)]
+/ blockfeedback = (window, correct)
+/ response = w400
+</block>
+***************************************************************
+
+
+
+Acquisition - valence - B1-left, B2-right
+************************
+<block info_acq_val_B1B2_33+42_1>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (ipract1v, consistency_info_v)
+/ trials = [1-8=random(LB1unpA_33+42, RB2plsA_33+42);
+            9-16=random(LB1unpA_33+42, RB2plsA_33+42);
+           17-24=random(LB1unpA_33+42, RB2plsA_33+42)]
+/ errormessage = true(error,200)
+/ blockfeedback = (correct)
+</block>
+
+<block acq_val_B1B2_33+42_2>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (ipract2va, ipract2b)
+/ trials = [1-8=random(LB1unpA_33+42, RB2plsA_33+42);
+            9-16=random(LB1unpA_33+42, RB2plsA_33+42);
+           17-24=random(LB1unpA_33+42, RB2plsA_33+42)]
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w475
+</block>
+
+<block acq_val_B1B2_33+42_3>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (ipract3a)
+/ trials = [1-8=random(LB1unpA_33+42, RB2plsA_33+42);
+            9-16=random(LB1unpA_33+42, RB2plsA_33+42);
+           17-24=random(LB1unpA_33+42, RB2plsA_33+42)]
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w450
+</block>
+
+<block acq_val_B1B2_33+42_4>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (repeattask)
+/ trials = [1-8=random(LB1unpA_33+42, RB2plsA_33+42);
+            9-16=random(LB1unpA_33+42, RB2plsA_33+42);
+           17-24=random(LB1unpA_33+42, RB2plsA_33+42)]
+/ blockfeedback = (window, correct)
+/ response = w400
+</block>
+
+Acquisition - valence - B2-left, B1-right
+************************
+<block info_acq_val_B2B1_33+42_1>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (ipract1v, consistency_info_v)
+/ trials = [1-8=random(LB2unpA_33+42, RB1plsA_33+42);
+            9-16=random(LB2unpA_33+42, RB1plsA_33+42);
+           17-24=random(LB2unpA_33+42, RB1plsA_33+42)]
+/ errormessage = true(error,200)
+/ blockfeedback = (correct)
+</block>
+
+<block acq_val_B2B1_33+42_2>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (ipract2va, ipract2b)
+/ trials = [1-8=random(LB2unpA_33+42, RB1plsA_33+42);
+            9-16=random(LB2unpA_33+42, RB1plsA_33+42);
+           17-24=random(LB2unpA_33+42, RB1plsA_33+42)]
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w475
+</block>
+
+<block acq_val_B2B1_33+42_3>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ trials = [1-8=random(LB2unpA_33+42, RB1plsA_33+42);
+            9-16=random(LB2unpA_33+42, RB1plsA_33+42);
+           17-24=random(LB2unpA_33+42, RB1plsA_33+42)]
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w450
+</block>
+
+<block acq_val_B2B1_33+42_4>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (repeattask)
+/ trials = [1-8=random(LB2unpA_33+42, RB1plsA_33+42);
+            9-16=random(LB2unpA_33+42, RB1plsA_33+42);
+           17-24=random(LB2unpA_33+42, RB1plsA_33+42)]
+/ blockfeedback = (window, correct)
+/ response = w400
+</block>
+
+
+Acquisition - gender - B1-left, B2-right
+************************
+<block info_acq_gen_B1B2_33+42_1>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (ipract1g, consistency_info_g)
+/ trials = [1-8=random(LB1femA_33+42, RB2malA_33+42);
+            9-16=random(LB1femA_33+42, RB2malA_33+42);
+           17-24=random(LB1femA_33+42, RB2malA_33+42)]
+/ errormessage = true(error,200)
+/ blockfeedback = (correct)
+</block>
+
+<block acq_gen_B1B2_33+42_2>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (ipract2ga, ipract2b)
+/ trials = [1-8=random(LB1femA_33+42, RB2malA_33+42);
+            9-16=random(LB1femA_33+42, RB2malA_33+42);
+           17-24=random(LB1femA_33+42, RB2malA_33+42)]
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w475
+</block>
+
+<block acq_gen_B1B2_33+42_3>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (ipract3a)
+/ trials = [1-8=random(LB1femA_33+42, RB2malA_33+42);
+            9-16=random(LB1femA_33+42, RB2malA_33+42);
+           17-24=random(LB1femA_33+42, RB2malA_33+42)]
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w450
+</block>
+
+<block acq_gen_B1B2_33+42_4>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (repeattask)
+/ trials = [1-8=random(LB1femA_33+42, RB2malA_33+42);
+            9-16=random(LB1femA_33+42, RB2malA_33+42);
+           17-24=random(LB1femA_33+42, RB2malA_33+42)]
+/ blockfeedback = (window, correct)
+/ response = w400
+</block>
+
+Acquisition - gender - B2-left, B1-right
+************************
+<block info_acq_gen_B2B1_33+42_1>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (ipract1g, consistency_info_g)
+/ trials = [1-8=random(LB2femA_33+42, RB1malA_33+42);
+            9-16=random(LB2femA_33+42, RB1malA_33+42);
+           17-24=random(LB2femA_33+42, RB1malA_33+42)]
+/ errormessage = true(error,200)
+/ blockfeedback = (correct)
+</block>
+
+<block acq_gen_B2B1_33+42_2>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (ipract2ga, ipract2b)
+/ trials = [1-8=random(LB2femA_33+42, RB1malA_33+42);
+            9-16=random(LB2femA_33+42, RB1malA_33+42);
+           17-24=random(LB2femA_33+42, RB1malA_33+42)]
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w475
+</block>
+
+<block acq_gen_B2B1_33+42_3>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (ipract3a)
+/ trials = [1-8=random(LB2femA_33+42, RB1malA_33+42);
+            9-16=random(LB2femA_33+42, RB1malA_33+42);
+           17-24=random(LB2femA_33+42, RB1malA_33+42)]
+/ errormessage = true(error,200)
+/ blockfeedback = (window, correct)
+/ response = w450
+</block>
+
+<block acq_gen_B2B1_33+42_4>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (repeattask)
+/ trials = [1-8=random(LB2femA_33+42, RB1malA_33+42);
+            9-16=random(LB2femA_33+42, RB1malA_33+42);
+           17-24=random(LB2femA_33+42, RB1malA_33+42)]
+/ blockfeedback = (window, correct)
+/ response = w400
+</block>
+********************************************************
+
+PRIME_A1:   NPLW    PRIME_A2:  DHJF
+PRIME_B1:   BMVZ    PRIME_B2:  GKQX
+
+<PAGE consistency_info_v>
+^^^^IMPORTANT – For the task you are about to do, a set of four letters will be
+briefly flashed before each word.  A specific set of four letters will precede unpleasant-meaning
+words much more often than pleasant ones.  A different set of four letters will precede pleasant-meaning
+words more often.
+^^YOU MAY BE ABLE TO SEE THESE LETTERS, BUT THEY MAY BE SO BRIEF THAT YOU CANNOT
+SEE THEM.  
+^^As this task is repeated, these same relationships will continue.  We strongly encourage you to learn them.  If you can
+see the letters, learning these relationships will definitely make it easier for you to rapidly classify the words.
+^^Again, try to remember these relationships.  If you can see the briefly presented sets of four letters, you
+should be able to take advantage of them to help you perform the word-classification task rapidly.
+</PAGE>
+
+<PAGE consistency_info_g>
+^^^^IMPORTANT – For the task you are about to do, a set of four letters will be
+briefly flashed before each name.  A specific set of four letters will precede female
+names much more often than male names.  A different set of four letters will precede male
+names more often.
+^^YOU MAY BE ABLE TO SEE THESE LETTERS, BUT THEY MAY BE SO BRIEF THAT YOU CANNOT
+SEE THEM.  
+^^As this task is repeated, these same relationships will continue.  We strongly encourage you to learn them.  If you can
+see the letters, learning these relationships will definitely make it easier for you to rapidly classify the names.
+^^Again, try to remember these relationships.  If you can see the briefly presented sets of four letters, you
+should be able to take advantage of them to help you perform the name-classification task rapidly.
+</PAGE>
+
+<PAGE ipract1v>
+^^^The next block gives PRACTICE categorizing words as UNPLEASANT or PLEASANT in meaning.^^
+Categorize the lower-case word that appears at the end of the trial sequence.
+^^
+Press the "e" key if the word is UNPLEASANT.^^
+Press the "i" key if the word is PLEASANT.^^
+NOTE: You will receive an ERROR message after incorrect responses.^^
+Be ready for the first stimulus when you press the key to move forward.
+</PAGE>
+
+<PAGE ipract1vx_33+42>
+^^^IMPORTANT – For the task you just did, you may have noticed that sets of four letters were
+briefly flashed before each word.  One specific set of four letters preceded pleasant-meaning
+words more often than unpleasant ones.  A different set of four letters preceded unpleasant
+words more often.  As this task is repeated, these same relationships will continue.  However,
+because these associations are less than perfect, they may not be easy to learn.  However, you
+might try to learn them – learning them may make it easier to respond rapidly in classifying the words.
+</page>
+
+<PAGE ipract2va>
+^^^In the next block, you will continue PRACTICE categorizing words as UNPLEASANT or PLEASANT.  However,
+in this block you should make your response ONLY DURING THE INTERVAL OF TIME THAT AN
+EXCLAMATION MARK ("!") IS PRESENT ON THE SCREEN.
+^^The exclamation mark will appear just after the word you are to categorize, and will remain
+on the screen for a short interval.
+^^If you successfully respond while the exclamation mark is present, the exclamation mark
+will turn red.  You should try to make this happen as often as possible.
+</PAGE>
+
+<PAGE ipract1g>
+^^^The next block gives PRACTICE categorizing names as FEMALE or MALE.^^
+Categorize the lower-case name that appears at the end of the trial sequence.
+^^
+Press the "e" key if the name is FEMALE.^^
+Press the "i" key if the word is MALE.^^
+NOTE: You will receive an ERROR message after incorrect responses.^^
+Be ready for the first stimulus when you press the key to move forward.
+</PAGE>
+
+<PAGE ipract1gx_33+42>
+^^^IMPORTANT – For the task you just did, you may have noticed that sets of four letters were
+briefly flashed before each name.  One specific set of four letters preceded male names more often
+than female names.  A different set of four letters preceded female names more often.  As this task
+is repeated, these same relationships will continue.  However, because these associations are less
+than perfect, they may not be easy to learn.  However, you might try to learn – learning them may
+make it easier to respond rapidly in classifying the words.
+</page>
+
+<PAGE ipract2ga>
+^^^In the next block, you will continue PRACTICE categorizing names as FEMALE or MALE.  However,
+in this block you should make your response ONLY DURING THE INTERVAL OF TIME THAT AN
+EXCLAMATION MARK ("!") IS PRESENT ON THE SCREEN.
+^^The exclamation mark will appear just after the name you are to categorize, and will remain
+on the screen for a short interval.
+^^If you successfully respond while the exclamation mark is present, the exclamation mark
+will turn red.  You should try to make this happen as often as possible.
+</PAGE>
+
+<PAGE ipract2b>
+^^^This task may seem difficult at first.  In order to make your response while the
+exclamation mark is present on the screen, you are likely to make some incorrect
+responses.
+^^As you gain practice, you should try to respond while the exclamation mark is present
+on the screen and to be as accurate as possible (however, you should expect to make
+errors on some number of trials throughout the experiment).
+^^NOTE: You will receive an ERROR message after incorrect responses.
+^^Be ready for the first stimulus when you press the key to proceed.
+</PAGE>
+
+<PAGE ipract3a>
+^^^In this block you will continue PRACTICE in the same task you have been doing.
+^^You should continue to try to make your response, as often as possible, while the exclamation
+mark is present on the screen, so that it turns red.
+^^NOTE: You will receive an ERROR message after incorrect responses.
+^^IMPORTANT: Do not respond too fast.  If your responses too often come before
+the exclamation point has appeared, we will be UNable to use your data for this experiment.
+^^Be ready for the first stimulus when you press the key to proceed.
+</PAGE>
+
+<PAGE ipract3b_g>
+^^^PRACTICE IS NOW OVER FOR THIS TASK.  You will return to this task soon.  But, first, there will be
+a brief task that involves a single page of questions.
+^^You may have seen that sets of 4 letters were presented before each male or female name that you
+classified.  The questions on the next page will ask if you noticed relations between these sets of
+letters and whether the names were male or female.
+^^In particular, you will be asked if you noticed that some letters often preceded male names or often
+preceded female names.  For some subjects the letters were presented too rapidly to permit them to
+be seen clearly.  If you could not see the letters, then please do your best to guess about which
+letters preceded male names, which ones preceded female names, and which ones did not appear at all.
+</PAGE>
+
+<PAGE ipract3b_v>
+^^^PRACTICE IS NOW OVER FOR THIS TASK.  You will return to this task soon.  But, first, there will be a
+brief task that involves a single page of questions.
+^^You may have seen that sets of 4 letters were presented before each pleasant or unpleasant word
+that you classified.  The questions on the next page will ask if you noticed relations between these
+sets of letters and whether the words were pleasant or unpleasant.
+^^In particular, you will be asked if you noticed that some letters often preceded pleasant words or
+often preceded unpleasant words.  For some subjects the letters were presented too rapidly to
+permit them to be seen clearly.  If you could not see the letters, then please do your best to guess
+about which letters preceded pleasant words, which ones preceded unpleasant words, and which
+ones did not appear at all.
+</PAGE>
+
+
+
+******** dummy and contingency varying blocks ********
+
+<survey contingency_awareness_gender> 
+/ pages = [1=contingency_items_gender] 
+/ showbackbutton = false 
+/ responsefontstyle = ("Arial", 2.2%, false, false, false, false, 5, 0) 
+/ itemfontstyle = ("Verdana", 2.2%, false, false, false, false, 5, 0) 
+/ itemspacing = 2.0% 
+/ screencolor = white
+</survey> 
+
+<surveypage contingency_items_gender> 
+/ caption = "For the questions on this page, you will need the mouse. 
+Each question requires a response to continue the session.  
+Indicate your choice for each question.
+Don't be alarmed if you don't recall seeing any of the letters that the questions ask about.
+They were presented very briefly and you may not have been able to see them." 
+/ finishlabel = "Check your responses, then click here" 
+/ fontstyle = ("Arial", 2.8%, true, false, false, false, 5, 0) 
+/ questions = [1=DHJF_g; 2=GKQX_g; 3=BMVZ_g; 4=NPLW_g] 
+/ showpagenumbers = false 
+/ showquestionnumbers = false 
+</surveypage> 
+
+<dropdown DHJF_g> 
+/caption = "In the trials completed so far, did the set of letters DHJF usually appear before male or female names?" 
+/ options = 
+("before male names (certainly)", "before male names (probably)", 
+"before male names (guess)", "DHJF did not appear in the task","before female names (guess)","before female names (probably)", "before female names (certainly)")
+/ optionvalues=("3", "2", "1", "0", "-1", "-2", "-3")
+/ required = true 
+</dropdown>
+
+<dropdown GKQX_g> 
+/caption = "In the trials completed so far, did the set of letters GKQX usually appear before male or female names?" 
+/ options = 
+("before male names (certainly)", "before male names (probably)", 
+"before male names (guess)", "GKQX did not appear in the task","before female names (guess)","before female names (probably)", "before female names (certainly)")
+/ optionvalues=("3", "2", "1", "0", "-1", "-2", "-3")
+/ required = true 
+</dropdown>
+
+<dropdown BMVZ_g> 
+/caption = "In the trials completed so far, did the set of letters BMVZ usually appear before male or female names?" 
+/ options = 
+("before male names (certainly)", "before male names (probably)", 
+"before male names (guess)", "BMVZ did not appear in the task","before female names (guess)","before female names (probably)", "before female names (certainly)")
+/ optionvalues=("3", "2", "1", "0", "-1", "-2", "-3")
+/ required = true 
+</dropdown>
+
+ <dropdown NPLW_g> 
+/caption = "In the trials completed so far, did the set of letters NPLW usually appear before male or female names?" 
+/ options = 
+("before male names (certainly)", "before male names (probably)", 
+"before male names (guess)", "NPLW did not appear in the task","before female names (guess)","before female names (probably)", "before female names (certainly)")
+/ optionvalues=("3", "2", "1", "0", "-1", "-2", "-3")
+/ required = true 
+</dropdown>
+
+<survey contingency_awareness_valence> 
+/ pages = [1=contingency_items_valence] 
+/ showbackbutton = false 
+/ responsefontstyle = ("Arial", 2.2%, false, false, false, false, 5, 0) 
+/ itemfontstyle = ("Verdana", 2.2%, false, false, false, false, 5, 0) 
+/ itemspacing = 2.5% 
+/ screencolor = white
+</survey> 
+
+<surveypage contingency_items_valence> 
+/ caption = "For the questions on this page, you will need the mouse. 
+Each question requires a response to continue the session.  
+Indicate your choice for each question.
+Don't be alarmed if you don't recall seeing any of the letters that the questions ask about.
+They were presented very briefly and you may not have been able to see them." 
+/ finishlabel = "Check your responses, then click here" 
+/ fontstyle = ("Arial", 2.8%, true, false, false, false, 5, 0) 
+/ questions = [1=DHJF_v; 2=GKQX_v; 3=BMVZ_v; 4=NPLW_v] 
+/ showpagenumbers = false 
+/ showquestionnumbers = false 
+</surveypage> 
+
+<dropdown DHJF_v> 
+/caption = "In the trials completed so far, did the set of letters DHJF usually appear before pleasant or unpleasant words?" 
+/ options = 
+("before pleasant words (certainly)", "before pleasant words (probably)", 
+"before pleasant words (guess)", "DHJF did not appear in the task","before unpleasant words (guess)","before unpleasant words (probably)", "before unpleasant words (certainly)")
+/ optionvalues=("3", "2", "1", "0", "-1", "-2", "-3")
+/ required = true 
+</dropdown>
+
+<dropdown GKQX_v> 
+/caption = "In the trials completed so far, did the set of letters GKQX usually appear before pleasant or unpleasant words?" 
+/ options = 
+("before pleasant words (certainly)", "before pleasant words (probably)", 
+"before pleasant words (guess)", " GKQX did not appear in the task","before unpleasant words (guess)","before unpleasant words (probably)", "before unpleasant words (certainly)")
+/ optionvalues=("3", "2", "1", "0", "-1", "-2", "-3")
+/ required = true 
+</dropdown>
+
+<dropdown BMVZ_v> 
+/caption = "In the trials completed so far, did the set of letters BMVZ usually appear before pleasant or unpleasant words?" 
+/ options = 
+("before pleasant words (certainly)", "before pleasant words (probably)", 
+"before pleasant words (guess)", "BMVZ did not appear in the task","before unpleasant words (guess)","before unpleasant words (probably)", "before unpleasant words (certainly)")
+/ optionvalues=("3", "2", "1", "0", "-1", "-2", "-3")
+/ required = true 
+</dropdown>
+
+ <dropdown NPLW_v> 
+/caption = "In the trials completed so far, did the set of letters NPLW usually appear before pleasant or unpleasant words?" 
+/ options = 
+("before pleasant words (certainly)", "before pleasant words (probably)", 
+"before pleasant words (guess)", "NPLW did not appear in the task","before unpleasant words (guess)","before unpleasant words (probably)", "before unpleasant words (certainly)")
+/ optionvalues=("3", "2", "1", "0", "-1", "-2", "-3")
+/ required = true 
+</dropdown>
+
+*****************************  ACQUISITION TRIALS ************************
+
+************** TRIALS with B1 and B2 CSs for valence ****************
+<trial LB1unpA_42+33>
+/ correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,prime_B1;
+  842=bmask2; 875=blank4,unpl__A]
+/ trialdata = [PRIME_B1 unpl__A]
+</trial>
+
+<trial LB2unpA_42+33>
+/ correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,prime_B2;
+  842=bmask2; 875=blank4,unpl__A]
+/ trialdata = [PRIME_B2 unpl__A]
+</trial>
+
+<trial RB1plsA_42+33>
+/ correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,prime_B1;
+  842=bmask2; 875=blank4,pleas_A]
+/ trialdata = [PRIME_B1 pleas_A]
+</trial>
+
+<trial RB2plsA_42+33>
+/ correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,prime_B2;
+  842=bmask2; 875=blank4,pleas_A]
+/ trialdata = [PRIME_B2 pleas_A]
+</trial>
+
+************** TRIALS with A1 and A2 CSs for valence ****************
+<trial LA1unpB_42+33>
+/ correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,prime_A1;
+  842=bmask2; 875=blank4,unpl__B]
+/ trialdata = [PRIME_A1 unpl__B]
+</trial>
+
+<trial LA2unpB_42+33>
+/ correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,prime_A2;
+  842=bmask2; 875=blank4,unpl__B]
+/ trialdata = [PRIME_A2 unpl__B]
+</trial>
+
+<trial RA1plsB_42+33>
+/ correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,prime_A1;
+  842=bmask2; 875=blank4,pleas_B]
+/ trialdata = [PRIME_A1 pleas_B]
+</trial>
+
+<trial RA2plsB_42+33>
+/ correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,prime_A2;
+  842=bmask2; 875=blank4,pleas_B]
+/ trialdata = [PRIME_A2 pleas_B]
+</trial>
+
+*************************************
+
+************** TRIALS with B1 and B2 CSs for gender ****************
+<trial LB1femA_42+33>
+/ correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,prime_B1;
+  842=bmask2; 875=blank4,femaleA]
+/ trialdata = [PRIME_B1 femaleA]
+</trial>
+
+<trial LB2femA_42+33>
+/ correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,prime_B2;
+  842=bmask2; 875=blank4,femaleA]
+/ trialdata = [PRIME_B2 femaleA]
+</trial>
+
+<trial RB1malA_42+33>
+/ correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,prime_B1;
+  842=bmask2; 875=blank4,male__A]
+/ trialdata = [PRIME_B1 male__A]
+</trial>
+
+<trial RB2malA_42+33>
+/ correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,prime_B2;
+  842=bmask2; 875=blank4,male__A]
+/ trialdata = [PRIME_B2 male__A]
+</trial>
+
+
+************** TRIALS with A1 and A2 CSs for gender ****************
+<trial LA1femB_42+33>
+/ correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,prime_A1;
+  842=bmask2; 875=blank4,femaleB]
+/ trialdata = [PRIME_A1 femaleB]
+</trial>
+
+<trial LA2femB_42+33>
+/ correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,prime_A2;
+  842=bmask2; 875=blank4,femaleB]
+/ trialdata = [PRIME_A2 femaleB]
+</trial>
+
+<trial RA1malB_42+33>
+/ correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,prime_A1;
+  842=bmask2; 875=blank4,male__B]
+/ trialdata = [PRIME_A1 male__B]
+</trial>
+
+<trial RA2malB_42+33>
+/ correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,prime_A2;
+  842=bmask2; 875=blank4,male__B]
+/ trialdata = [PRIME_A2 male__B]
+</trial>
+*************************************
+************** TRIALS with B1 and B2 CSs for valence ****************
+
+<trial LB1unpA_33+42>
+/ correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,prime_B1;
+  875=blank4,unpl__A]
+/ trialdata = [PRIME_B1 unpl__A]
+</trial>
+
+<trial LB2unpA_33+42>
+/ correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,prime_B2;
+  875=blank4,unpl__A]
+/ trialdata = [PRIME_B2 unpl__A]
+</trial>
+
+<trial RB1plsA_33+42>
+/ correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,prime_B1;
+  875=blank4,pleas_A]
+/ trialdata = [PRIME_B1 pleas_A]
+</trial>
+
+<trial RB2plsA_33+42>
+/ correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,prime_B2;
+  875=blank4,pleas_A]
+/ trialdata = [PRIME_B2 pleas_A]
+</trial>
+
+************** TRIALS with A1 and A2 CSs for valence ****************
+<trial LA1unpB_33+42>
+/ correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,prime_A1;
+  875=blank4,unpl__B]
+/ trialdata = [PRIME_A1 unpl__B]
+</trial>
+
+<trial LA2unpB_33+42>
+/ correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,prime_A2;
+  875=blank4,unpl__B]
+/ trialdata = [PRIME_A2 unpl__B]
+</trial>
+
+<trial RA1plsB_33+42>
+/ correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,prime_A1;
+  875=blank4,pleas_B]
+/ trialdata = [PRIME_A1 pleas_B]
+</trial>
+
+<trial RA2plsB_33+42>
+/ correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,prime_A2;
+  875=blank4,pleas_B]
+/ trialdata = [PRIME_A2 pleas_B]
+</trial>
+
+*************************************
+
+************** TRIALS with B1 and B2 CSs for gender ****************
+<trial LB1femA_33+42>
+/ correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,prime_B1;
+  875=blank4,femaleA]
+/ trialdata = [PRIME_B1 femaleA]
+</trial>
+
+<trial LB2femA_33+42>
+/ correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,prime_B2;
+  875=blank4,femaleA]
+/ trialdata = [PRIME_B2 femaleA]
+</trial>
+
+<trial RB1malA_33+42>
+/ correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,prime_B1;
+  875=blank4,male__A]
+/ trialdata = [PRIME_B1 male__A]
+</trial>
+
+<trial RB2malA_33+42>
+/ correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,prime_B2;
+  875=blank4,male__A]
+/ trialdata = [PRIME_B2 male__A]
+</trial>
+
+
+************** TRIALS with A1 and A2 CSs for gender ****************
+<trial LA1femB_33+42>
+/ correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,prime_A1;
+  875=blank4,femaleB]
+/ trialdata = [PRIME_A1 femaleB]
+</trial>
+
+<trial LA2femB_33+42>
+/ correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,prime_A2;
+  875=blank4,femaleB]
+/ trialdata = [PRIME_A2 femaleB]
+</trial>
+
+<trial RA1malB_33+42>
+/ correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,prime_A1;
+  875=blank4,male__B]
+/ trialdata = [PRIME_A1 male__B]
+</trial>
+
+<trial RA2malB_33+42>
+/ correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,prime_A2;
+  875=blank4,male__B]
+/ trialdata = [PRIME_A2 male__B]
+</trial>
+*************************************
+<trial A1_1>
+/ stimulusframes = [1=random(A1_1_letters)]
+/ validresponse = ("e", "i")
+/ response = free
+/ pretrialpause = 500
+/ posttrialpause = 500
+/ correctmessage = false
+/ errormessage = false
+/ trialdata = [A1_1_letters]
+</trial>
+
+<trial A2_1>
+/ stimulusframes = [1=random(A2_1_letters)]
+/ validresponse = ("e", "i")
+/ response = free
+/ pretrialpause = 500
+/ posttrialpause = 500
+/ correctmessage = false
+/ errormessage = false
+/ trialdata = [A2_1_letters]
+</trial>
+
+<trial A1_4>
+/ stimulusframes = [1=random(A1_4_letters)]
+/ validresponse = ("e", "i")
+/ response = free
+/ pretrialpause = 500
+/ posttrialpause = 500
+/ correctmessage = false
+/ errormessage = false
+/ trialdata = [A1_4_letters]
+</trial>
+
+<trial A2_4>
+/ stimulusframes = [1=random(A2_4_letters)]
+/ validresponse = ("e", "i")
+/ response = free
+/ pretrialpause = 500
+/ posttrialpause = 500
+/ correctmessage = false
+/ errormessage = false
+/ trialdata = [A2_4_letters]
+</trial>
+
+<trial B1_1>
+/ stimulusframes = [1=random(B1_1_letters)]
+/ validresponse = ("e", "i")
+/ response = free
+/ pretrialpause = 500
+/ posttrialpause = 500
+/ correctmessage = false
+/ errormessage = false
+/ trialdata = [B1_1_letters]
+</trial>
+
+<trial B2_1>
+/ stimulusframes = [1=random(B2_1_letters)]
+/ validresponse = ("e", "i")
+/ response = free
+/ pretrialpause = 500
+/ posttrialpause = 500
+/ correctmessage = false
+/ errormessage = false
+/ trialdata = [B2_1_letters]
+</trial>
+
+<trial B1_4>
+/ stimulusframes = [1=random(B1_4_letters)]
+/ validresponse = ("e", "i")
+/ response = free
+/ pretrialpause = 500
+/ posttrialpause = 500
+/ correctmessage = false
+/ errormessage = false
+/ trialdata = [B1_4_letters]
+</trial>
+
+<trial B2_4>
+/ stimulusframes = [1=random(B2_4_letters)]
+/ validresponse = ("e", "i")
+/ response = free
+/ pretrialpause = 500
+/ posttrialpause = 500
+/ correctmessage = false
+/ errormessage = false
+/ trialdata = [B2_4_letters]
+</trial>
+
+
+<text A1_1_letters>
+/ position = (50,51.85)
+/ color = (0,0,0)
+/ fontstyle = ("Arial", 5.0%, true)
+/ items = A1_1_letters
+/ erase = true (170,170,170)
+</text>
+
+<item A1_1_letters>
+/ 1 ="N"
+/ 2= "P"
+/ 3= "L"
+/ 4= "W"
+</item>
+
+<text A2_1_letters>
+/ position = (50,51.85)
+/ color = (0,0,0)
+/ fontstyle = ("Arial", 5.0%, true)
+/ items = A2_1_letters
+/ erase = true (170,170,170)
+</text>
+
+<item A2_1_letters>
+/ 1 ="D"
+/ 2= "F"
+/ 3= "H"
+/ 4= "J"
+</item>
+
+<text B1_1_letters>
+/ position = (50,51.85)
+/ color = (0,0,0)
+/ fontstyle = ("Arial", 5.0%, true)
+/ items = B1_1_letters
+/ erase = true (170,170,170)
+</text>
+
+<item B1_1_letters>
+/ 1 ="B"
+/ 2= "M"
+/ 3= "V"
+/ 4= "Z"
+</item>
+
+<text B2_1_letters>
+/ position = (50,51.85)
+/ color = (0,0,0)
+/ fontstyle = ("Arial", 5.0%, true)
+/ items = B2_1_letters
+/ erase = true (170,170,170)
+</text>
+
+<item B2_1_letters>
+/ 1= "G"
+/ 2= "K"
+/ 3= "Q"
+/ 4= "X"
+</item>
+
+
+<text A1_4_letters>
+/ position = (50,51.85)
+/ color = (0,0,0)
+/ fontstyle = ("Arial", 5.0%, true)
+/ items = A1_4_letters
+/ erase = true (170,170,170)
+</text>
+
+<item A1_4_letters>
+/ 1 ="NPLW"
+</item>
+
+<text A2_4_letters>
+/ position = (50,51.85)
+/ color = (0,0,0)
+/ fontstyle = ("Arial", 5.0%, true)
+/ items = A2_4_letters
+/ erase = true (170,170,170)
+</text>
+
+<item A2_4_letters>
+/ 1 ="DHJF"
+</item>
+
+<text B1_4_letters>
+/ position = (50,51.85)
+/ color = (0,0,0)
+/ fontstyle = ("Arial", 5.0%, true)
+/ items = B1_4_letters
+/ erase = true (170,170,170)
+</text>
+
+<item B1_4_letters>
+/ 1 ="BMVZ"
+</item>
+
+<text B2_4_letters>
+/ position = (50,51.85)
+/ color = (0,0,0)
+/ fontstyle = ("Arial", 5.0%, true)
+/ items = B2_4_letters
+/ erase = true (170,170,170)
+</text>
+
+<item B2_4_letters>
+/ 1 ="GKQX"
+</item>
+
+
+
+<text gender_e>
+/ position = (50,60)
+/ color = (0,0,0)
+/ txbgcolor = (170,170,170)
+/ fontstyle = ("Arial", 2.5%, true)
+/ items = ("Press 'e' if you remember that the letter(s) were most often associated with FEMALE names")
+/ erase = true (170,170,170)
+</text>
+
+<text gender_i>
+/ position = (50,65)
+/ color = (0,0,0)
+/ txbgcolor = (170,170,170)
+/ fontstyle = ("Arial", 2.5%, true)
+/ items = ("Press 'i' if you remember that the letter(s) were most often associated with MALE names")
+/ erase = true (170,170,170)
+</text>
+
+<text valence_e>
+/ position = (50,60)
+/ color = (0,0,0)
+/ txbgcolor = (170,170,170)
+/ fontstyle = ("Arial", 2.5%, true)
+/ items = ("Press 'e' if you remember that the letter(s) were most often associated with UNPLEASANT words")
+/ erase = true (170,170,170)
+</text>
+
+<text valence_i>
+/ position = (50,65)
+/ color = (0,0,0)
+/ txbgcolor = (170,170,170)
+/ fontstyle = ("Arial", 2.5%, true)
+/ items = ("Press 'i' if you remember that the letter(s) were most often associated with PLEASANT words")
+/ erase = true (170,170,170)
+</text>
+
+
+******** data collection extinction trial blocks **********
+
+<block test42+33_A12_unpB_plsB>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (repeatdtask)
+/ trials = [1-48=random(LA1unpB_42+33, LA2unpB_42+33, RA1plsB_42+33, RA2plsB_42+33)]
+/ blockfeedback = (window, correct)
+/ response = w400
+</block>
+
+<block test42+33_B12_unpA_plsA>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (repeatdtask)
+/ trials = [1-48=random(LB1unpA_42+33, LB2unpA_42+33, RB1plsA_42+33, RB2plsA_42+33)]
+/ blockfeedback = (window, correct)
+/ response = w400
+</block>
+
+<block test42+33_A12_femB_malB>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (repeatdtask)
+/ trials = [1-48=random(LA1femB_42+33, LA2femB_42+33, RA1malB_42+33, RA2malB_42+33)]
+/ blockfeedback = (window, correct)
+/ response = w400
+</block>
+
+<block test42+33_B12_femA_malA>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (repeatdtask)
+/ trials = [1-48=random(LB1femA_42+33, LB2femA_42+33, RB1malA_42+33, RB2malA_42+33)]
+/ blockfeedback = (window, correct)
+/ response = w400
+</block>
+
+<block test33+42_A12_unpB_plsB>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (repeatdtask)
+/ trials = [1-48=random(LA1unpB_33+42, LA2unpB_33+42, RA1plsB_33+42, RA2plsB_33+42)]
+/ blockfeedback = (window, correct)
+/ response = w400
+</block>
+
+<block test33+42_B12_unpA_plsA>
+/ bgstim = (unpleasant_left, pleasant_right)
+/ preinstructions = (repeatdtask)
+/ trials = [1-48=random(LB1unpA_33+42, LB2unpA_33+42, RB1plsA_33+42, RB2plsA_33+42)]
+/ blockfeedback = (window, correct)
+/ response = w400
+</block>
+
+<block test33+42_A12_femB_malB>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (repeatdtask)
+/ trials = [1-48=random(LA1femB_33+42, LA2femB_33+42, RA1malB_33+42, RA2malB_33+42)]
+/ blockfeedback = (window, correct)
+/ response = w400
+</block>
+
+<block test33+42_B12_femA_malA>
+/ bgstim = (female_left, male_right)
+/ preinstructions = (repeatdtask)
+/ trials = [1-48=random(LB1femA_33+42, LB2femA_33+42, RB1malA_33+42, RB2malA_33+42)]
+/ blockfeedback = (window, correct)
+/ response = w400
+</block>
+
+<PAGE repeattask>
+^^^*****************************************************************************************
+^^THE FOLLOWING BLOCK COLLECTS DATA IN THE TASK THAT YOU PREVIOUSLY DID.
+^^You WILL NOT receive an ERROR message after incorrect responses.
+^^REMINDER: Do not respond too fast.  Always try to make the exclamation point turn red.
+^^Be ready for the first stimulus when you press the key.
+</PAGE>
+
+********************** direct measure blocks  **********************************
+PRIME_A1:   NPLW    PRIME_A2:  DHJF
+PRIME_B1:   BMVZ    PRIME_B2:  GKQX
+
+
+
+
+PRIME_A1:   NPLW    PRIME_A2:  DHJF
+PRIME_B1:   BMVZ    PRIME_B2:  GKQX
+
+<PAGE dApract1>
+^^*****************************************************************************************
+^^*****************************************************************************************
+^THIS NEXT BLOCK GIVES PRACTICE IN A NEW TASK.
+^^You will no longer be categorizing the lower-case words that you have
+been categorizing so far.  Instead, you will be categorizing some letter
+strings that will appear FLASHED VERY RAPIDLY just before each lower-case word.
+^^The letter strings to distinguish use distinct sets of four letters.
+^^  If you see the letters DHJF please press the left key.
+^  If you see NPLW please press the right key.
+^^In later data collection blocks, these letters will be so brief that
+you may not be able to identify them.  However, for these practice trials, they will be
+shown at greater length to allow you to see where they are in the trial sequence.
+</PAGE>
+
+<PAGE dBpract1>
+^^*****************************************************************************************
+^^*****************************************************************************************
+^THIS NEXT BLOCK GIVES PRACTICE IN A NEW TASK.
+^^You will no longer be categorizing the lower-case words that you have
+been categorizing so far.  Instead, you will be categorizing some letter
+strings that will appear FLASHED VERY RAPIDLY just before each lower-case word.
+^^The letter strings to distinguish use distinct sets of four letters.
+^^  If you see the letters GKQX please press the left key.
+^  If you see BMVZ please press the right key.
+^^In later data collection blocks, these letters will be so brief that
+you may not be able to identify them.  However, for these practice trials, they will be
+shown at greater length to allow you to see where they are in the trial sequence.
+</PAGE>
+
+<PAGE dpract2>
+^^*****************************************************************************************
+^^*****************************************************************************************
+^IMPORTANT NOTE: Your response no longer has to be made while the exclamation mark is on
+the screen.  Indeed, the computer will NOT ACCEPT rapid responses in this new
+task.  TAKE AS LONG AS NECESSARY TO MAKE AN ACCURATE RESPONSE.
+^^Remember to categorize the briefly-flashed letters.  You will receive an
+ERROR message after any incorrect response.
+^^IMPORTANT:  If you give your response too rapidly, the computer will not accept it
+-- you will have to press the response key a second time.  Be ready for the first stimulus
+when you press the key to move forward.
+</PAGE>
+
+
+
+
+<PAGE dMpract3>
+^^*****************************************************************************************
+^^*****************************************************************************************
+^^The next block continues PRACTICE in the same task.
+^^In this block, the letters that you are to classify will be flashed more rapidly.  It may be difficult to
+identify them on some trials.  This will give you practice for the actual data collection
+blocks to follow, in which the letters will be flashed even more rapidly than
+in the next block.
+Remember that you can ignore the exclamation mark.  Take as long as necessary to make
+an accurate response.
+^^NOTE: You will receive an ERROR message after incorrect responses.
+^^Be ready for the first stimulus when you press the key to proceed.
+</PAGE>
+
+<PAGE dMpract4>
+^^*****************************************************************************************
+^^*****************************************************************************************
+^^PRACTICE IS NOW OVER.
+^^In the following data collection blocks, the letters that you are to classify will be flashed slightly
+more rapidly than in the block you just finished.  On some (possibly many) trials it may
+be difficult to identify.  Attend carefully to the display and do your best.  On any trials
+on which you are unable to identify the letters, make your best guess.
+^^Remember that you should ignore the exclamation mark; take the time needed to be as
+accurate as you can be.
+</PAGE>
+
+<block dA12_valB_42+33>
+/ bgstim = (A2_left, A1_right)
+/ preinstructions = (repeatDtask)
+/ trials = [1-48=random(d42+33LLA2valB, d42+33LRA2valB, d42+33RLA1valB, d42+33RRA1valB)]
+/ blockfeedback = (correct)
+</block>
+
+<block dB12_valA_42+33>
+/ bgstim = (B2_left, B1_right)
+/ preinstructions = (repeatDtask)
+/ trials = [1-48=random(d42+33LLB2valA, d42+33LRB2valA, d42+33RLB1valA, d42+33RRB1valA)]
+/ blockfeedback = (correct)
+</block>
+
+<block dA12_genB_42+33>
+/ bgstim = (A2_left, A1_right)
+/ preinstructions = (repeatDtask)
+/ trials = [1-48=random(d42+33LLA2genB, d42+33LRA2genB, d42+33RLA1genB, d42+33RRA1genB)]
+/ blockfeedback = (correct)
+</block>
+
+<block dB12_genA_42+33>
+/ bgstim = (B2_left, B1_right)
+/ preinstructions = (repeatDtask)
+/ trials = [1-48=random(d42+33LLB2genA, d42+33LRB2genA, d42+33RLB1genA, d42+33RRB1genA)]
+/ blockfeedback = (correct)
+</block>
+
+<block dA12_valB_33+42>
+/ bgstim = (A2_left, A1_right)
+/ preinstructions = (repeatDtask)
+/ trials = [1-48=random(d33+42LLA2valB, d33+42LRA2valB, d33+42RLA1valB, d33+42RRA1valB)]
+/ blockfeedback = (correct)
+</block>
+
+<block dB12_valA_33+42>
+/ bgstim = (B2_left, B1_right)
+/ preinstructions = (repeatDtask)
+/ trials = [1-48=random(d33+42LLB2valA, d33+42LRB2valA, d33+42RLB1valA, d33+42RRB1valA)]
+/ blockfeedback = (correct)
+</block>
+
+<block dA12_genB_33+42>
+/ bgstim = (A2_left, A1_right)
+/ preinstructions = (repeatDtask)
+/ trials = [1-48=random(d33+42LLA2genB, d33+42LRA2genB, d33+42RLA1genB, d33+42RRA1genB)]
+/ blockfeedback = (correct)
+</block>
+
+<block dB12_genA_33+42>
+/ bgstim = (B2_left, B1_right)
+/ preinstructions = (repeatDtask)
+/ trials = [1-48=random(d33+42LLB2genA, d33+42LRB2genA, d33+42RLB1genA, d33+42RRB1genA)]
+/ blockfeedback = (correct)
+</block>
+
+<PAGE repeatDtask>
+^^*****************************************************************************************
+^^*****************************************************************************************
+^^^THE FOLLOWING BLOCK COLLECTS DATA IN THE TASK YOU HAVE JUST BEEN DOING.
+^^You WILL NOT receive an ERROR message after incorrect responses.
+^^Be ready for the first stimulus when you press the key.
+</PAGE>
+
+
+****************** debriefing block ********************
+<block debrief>
+/ preinstructions = (end1, end2, end3, end4)
+/ trials = [1=endlock]
+</block>
+
+<text endlock>
+/ items = ("The experiment is complete.")
+/ fontstyle = ("Arial", 1.83%, false, false, false, false, 5, 1)
+/ txcolor = white
+/ txbgcolor = black
+</text>
+
+<shape blackscreen>
+/ color = black
+/ size = (100%, 100%)
+</shape>
+
+
+<trial endlock>
+/ stimulusframes = [1=blackscreen, endlock]
+/ validresponse = ("~~")
+/ recorddata = false
+</trial>
+
+<openended writereactions>
+/ buttonlabel = "click HERE to end the experiment"
+/ charlimit = 1000
+/ position = (50, 85)
+/ linelength = 50
+/ numlines = 15
+/ trialcode = "reactions"
+/ stimulusframes = [1= question]
+</openended>
+
+<text question>
+/ numitems=1
+/ area = (640, 200)
+/ items = ("
+If you would like to record any reactions to the experiment (not to be
+read until the experiment is completed), please use this page.
+
+The space below is for any reactions to the experiment.  It is not
+necessary for you to provide reactions.  However, we will be glad to have
+them.  Please type any reactions in the space provided.  When you are
+completed, press the ENTER key.
+
+Do NOT press ENTER until you are completed because this page will disappear.")
+/ position = (50, 20)
+/ fontstyle = ("Arial", 2.6%, false, false, false, false, 5)
+</text>
+
+
+
+********** visibility trials: valence targets, primesfrom set A, targets from  set B **********
+
+<trial dL_LLA1valB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [1=blank1,focus; 500=fmask2; 700=blank2,PRIME_A1;
+ 833=bmask2; 875=blank4,unpl__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 unpl__B]
+</trial>
+
+<trial dL_LRA1valB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 700=blank2,PRIME_A1;
+ 833=bmask2; 875=blank4,pleas_B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 pleas_B]
+</trial>
+
+<trial dL_RLA2valB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 700=blank2,PRIME_A2;
+ 833=bmask2; 875=blank4,unpl__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 unpl__B]
+</trial>
+
+<trial dL_RRA2valB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 700=blank2,PRIME_A2;
+ 833=bmask2; 875=blank4,pleas_B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 pleas_B]
+</trial>
+
+
+<trial dL_LLA2valB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 700=blank2,PRIME_A2;
+ 833=bmask2; 875=blank4,unpl__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 unpl__B]
+</trial>
+
+<trial dL_LRA2valB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 700=blank2,PRIME_A2;
+ 833=bmask2; 875=blank4,pleas_B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 pleas_B]
+</trial>
+ 
+<trial dL_RLA1valB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 700=blank2,PRIME_A1;
+ 833=bmask2; 875=blank4,unpl__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 unpl__B]
+</trial>
+
+<trial dL_RRA1valB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 700=blank2,PRIME_A1;
+ 833=bmask2; 875=blank4,pleas_B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 pleas_B]
+</trial>
+
+
+<trial dM_LLA1valB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_A1;
+ 833=bmask2; 875=blank4,unpl__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 unpl__B]
+</trial>
+
+<trial dM_LRA1valB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_A1;
+ 833=bmask2; 875=blank4,pleas_B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 pleas_B]
+</trial>
+ 
+<trial dM_RLA2valB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_A2;
+ 833=bmask2; 875=blank4,unpl__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 unpl__B]
+</trial>
+
+<trial dM_RRA2valB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_A2;
+ 833=bmask2; 875=blank4,pleas_B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 pleas_B]
+</trial>
+
+
+<trial dM_LLA2valB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_A2;
+ 833=bmask2; 875=blank4,unpl__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 unpl__B]
+</trial>
+
+<trial dM_LRA2valB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_A2;
+ 833=bmask2; 875=blank4,pleas_B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 pleas_B]
+</trial>
+ 
+<trial dM_RLA1valB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_A1;
+ 833=bmask2; 875=blank4,unpl__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 unpl__B]
+</trial>
+
+<trial dM_RRA1valB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_A1;
+ 833=bmask2; 875=blank4,pleas_B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 pleas_B]
+</trial>
+
+
+<trial d42+33LLA1valB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_A1;
+ 842=bmask2; 875=blank4,unpl__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 unpl__B]
+</trial>
+
+<trial d42+33LRA1valB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_A1;
+  842=bmask2; 875=blank4,pleas_B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 pleas_B]
+</trial>
+
+<trial d42+33RLA2valB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_A2;
+ 842=bmask2; 875=blank4,unpl__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 unpl__B]
+</trial>
+
+<trial d42+33RRA2valB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_A2;
+  842=bmask2; 875=blank4,pleas_B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 pleas_B]
+</trial>
+ 
+<trial d42+33LLA2valB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_A2;
+ 842=bmask2; 875=blank4,unpl__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 unpl__B]
+</trial>
+
+<trial d42+33LRA2valB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_A2;
+ 842=bmask2; 875=blank4,pleas_B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 pleas_B]
+</trial>
+ 
+<trial d42+33RLA1valB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_A1;
+ 842=bmask2; 875=blank4,unpl__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 unpl__B]
+</trial>
+
+<trial d42+33RRA1valB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_A1;
+ 842=bmask2; 875=blank4,pleas_B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 pleas_B]
+</trial>
+
+********** visibility trials: valence targets, primesfrom set B, targets from  set A  **********
+
+<trial dL_LLB1valA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [1=blank1,focus; 500=fmask2; 700=blank2,PRIME_B1;
+ 833=bmask2; 875=blank4,unpl__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 unpl__A]
+</trial>
+
+<trial dL_LRB1valA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 700=blank2,PRIME_B1;
+ 833=bmask2; 875=blank4,pleas_A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 pleas_A]
+</trial>
+
+<trial dL_RLB2valA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 700=blank2,PRIME_B2;
+ 833=bmask2; 875=blank4,unpl__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 unpl__A]
+</trial>
+
+<trial dL_RRB2valA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 700=blank2,PRIME_B2;
+ 833=bmask2; 875=blank4,pleas_A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 pleas_A]
+</trial>
+
+
+<trial dL_LLB2valA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 700=blank2,PRIME_B2;
+ 833=bmask2; 875=blank4,unpl__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 unpl__A]
+</trial>
+
+<trial dL_LRB2valA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 700=blank2,PRIME_B2;
+ 833=bmask2; 875=blank4,pleas_A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 pleas_A]
+</trial>
+ 
+<trial dL_RLB1valA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 700=blank2,PRIME_B1;
+ 833=bmask2; 875=blank4,unpl__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 unpl__A]
+</trial>
+
+<trial dL_RRB1valA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 700=blank2,PRIME_B1;
+ 833=bmask2; 875=blank4,pleas_A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 pleas_A]
+</trial>
+
+
+<trial dM_LLB1valA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_B1;
+ 833=bmask2; 875=blank4,unpl__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 unpl__A]
+</trial>
+
+<trial dM_LRB1valA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_B1;
+ 833=bmask2; 875=blank4,pleas_A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 pleas_A]
+</trial>
+ 
+<trial dM_RLB2valA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_B2;
+ 833=bmask2; 875=blank4,unpl__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 unpl__A]
+</trial>
+
+<trial dM_RRB2valA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_B2;
+ 833=bmask2; 875=blank4,pleas_A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 pleas_A]
+</trial>
+
+
+<trial dM_LLB2valA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_B2;
+ 833=bmask2; 875=blank4,unpl__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 unpl__A]
+</trial>
+
+<trial dM_LRB2valA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_B2;
+ 833=bmask2; 875=blank4,pleas_A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 pleas_A]
+</trial>
+ 
+<trial dM_RLB1valA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_B1;
+ 833=bmask2; 875=blank4,unpl__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 unpl__A]
+</trial>
+
+<trial dM_RRB1valA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_B1;
+ 833=bmask2; 875=blank4,pleas_A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 pleas_A]
+</trial>
+
+
+<trial d42+33LLB1valA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_B1;
+ 842=bmask2; 875=blank4,unpl__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 unpl__A]
+</trial>
+
+<trial d42+33LRB1valA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_B1;
+  842=bmask2; 875=blank4,pleas_A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 pleas_A]
+</trial>
+
+<trial d42+33RLB2valA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_B2;
+ 842=bmask2; 875=blank4,unpl__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 unpl__A]
+</trial>
+
+<trial d42+33RRB2valA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_B2;
+  842=bmask2; 875=blank4,pleas_A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 pleas_A]
+</trial>
+ 
+<trial d42+33LLB2valA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_B2;
+ 842=bmask2; 875=blank4,unpl__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 unpl__A]
+</trial>
+
+<trial d42+33LRB2valA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_B2;
+ 842=bmask2; 875=blank4,pleas_A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 pleas_A]
+</trial>
+ 
+<trial d42+33RLB1valA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_B1;
+ 842=bmask2; 875=blank4,unpl__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 unpl__A]
+</trial>
+
+<trial d42+33RRB1valA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_B1;
+ 842=bmask2; 875=blank4,pleas_A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 pleas_A]
+</trial>
+
+************************************************************************
+
+********** visibility trials: gender targets, primesfrom set A, targets from  set B **********
+
+<trial dL_LLA1genB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [1=blank1,focus; 500=fmask2; 700=blank2,PRIME_A1;
+ 833=bmask2; 875=blank4,femaleB; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 femaleB]
+</trial>
+
+<trial dL_LRA1genB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 700=blank2,PRIME_A1;
+ 833=bmask2; 875=blank4,male__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 male__B]
+</trial>
+
+<trial dL_RLA2genB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 700=blank2,PRIME_A2;
+ 833=bmask2; 875=blank4,femaleB; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 femaleB]
+</trial>
+
+<trial dL_RRA2genB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 700=blank2,PRIME_A2;
+ 833=bmask2; 875=blank4,male__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 male__B]
+</trial>
+
+
+<trial dL_LLA2genB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 700=blank2,PRIME_A2;
+ 833=bmask2; 875=blank4,femaleB; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 femaleB]
+</trial>
+
+<trial dL_LRA2genB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 700=blank2,PRIME_A2;
+ 833=bmask2; 875=blank4,male__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 male__B]
+</trial>
+ 
+<trial dL_RLA1genB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 700=blank2,PRIME_A1;
+ 833=bmask2; 875=blank4,femaleB; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 femaleB]
+</trial>
+
+<trial dL_RRA1genB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 700=blank2,PRIME_A1;
+ 833=bmask2; 875=blank4,male__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 male__B]
+</trial>
+
+
+<trial dM_LLA1genB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_A1;
+ 833=bmask2; 875=blank4,femaleB; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 femaleB]
+</trial>
+
+<trial dM_LRA1genB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_A1;
+ 833=bmask2; 875=blank4,male__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 male__B]
+</trial>
+ 
+<trial dM_RLA2genB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_A2;
+ 833=bmask2; 875=blank4,femaleB; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 femaleB]
+</trial>
+
+<trial dM_RRA2genB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_A2;
+ 833=bmask2; 875=blank4,male__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 male__B]
+</trial>
+
+
+<trial dM_LLA2genB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_A2;
+ 833=bmask2; 875=blank4,femaleB; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 femaleB]
+</trial>
+
+<trial dM_LRA2genB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_A2;
+ 833=bmask2; 875=blank4,male__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 male__B]
+</trial>
+ 
+<trial dM_RLA1genB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_A1;
+ 833=bmask2; 875=blank4,femaleB; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 femaleB]
+</trial>
+
+<trial dM_RRA1genB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_A1;
+ 833=bmask2; 875=blank4,male__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 male__B]
+</trial>
+
+
+<trial d42+33LLA1genB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_A1;
+ 842=bmask2; 875=blank4,femaleB; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 femaleB]
+</trial>
+
+<trial d42+33LRA1genB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_A1;
+  842=bmask2; 875=blank4,male__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 male__B]
+</trial>
+
+<trial d42+33RLA2genB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_A2;
+ 842=bmask2; 875=blank4,femaleB; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 femaleB]
+</trial>
+
+<trial d42+33RRA2genB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_A2;
+  842=bmask2; 875=blank4,male__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 male__B]
+</trial>
+ 
+<trial d42+33LLA2genB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_A2;
+ 842=bmask2; 875=blank4,femaleB; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 femaleB]
+</trial>
+
+<trial d42+33LRA2genB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_A2;
+ 842=bmask2; 875=blank4,male__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 male__B]
+</trial>
+ 
+<trial d42+33RLA1genB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_A1;
+ 842=bmask2; 875=blank4,femaleB; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 femaleB]
+</trial>
+
+<trial d42+33RRA1genB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_A1;
+ 842=bmask2; 875=blank4,male__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 male__B]
+</trial>
+
+********** visibility trials: gender targets, primesfrom set B, targets from  set A  **********
+
+<trial dL_LLB1genA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [1=blank1,focus; 500=fmask2; 700=blank2,PRIME_B1;
+ 833=bmask2; 875=blank4,femaleA; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 femaleA]
+</trial>
+
+<trial dL_LRB1genA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 700=blank2,PRIME_B1;
+ 833=bmask2; 875=blank4,male__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 male__A]
+</trial>
+
+<trial dL_RLB2genA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 700=blank2,PRIME_B2;
+ 833=bmask2; 875=blank4,femaleA; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 femaleA]
+</trial>
+
+<trial dL_RRB2genA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 700=blank2,PRIME_B2;
+ 833=bmask2; 875=blank4,male__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 male__A]
+</trial>
+
+
+<trial dL_LLB2genA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 700=blank2,PRIME_B2;
+ 833=bmask2; 875=blank4,femaleA; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 femaleA]
+</trial>
+
+<trial dL_LRB2genA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 700=blank2,PRIME_B2;
+ 833=bmask2; 875=blank4,male__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 male__A]
+</trial>
+ 
+<trial dL_RLB1genA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 700=blank2,PRIME_B1;
+ 833=bmask2; 875=blank4,femaleA; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 femaleA]
+</trial>
+
+<trial dL_RRB1genA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 700=blank2,PRIME_B1;
+ 833=bmask2; 875=blank4,male__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 male__A]
+</trial>
+
+
+<trial dM_LLB1genA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_B1;
+ 833=bmask2; 875=blank4,femaleA; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 femaleA]
+</trial>
+
+<trial dM_LRB1genA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_B1;
+ 833=bmask2; 875=blank4,male__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 male__A]
+</trial>
+ 
+<trial dM_RLB2genA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_B2;
+ 833=bmask2; 875=blank4,femaleA; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 femaleA]
+</trial>
+
+<trial dM_RRB2genA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_B2;
+ 833=bmask2; 875=blank4,male__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 male__A]
+</trial>
+
+
+<trial dM_LLB2genA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_B2;
+ 833=bmask2; 875=blank4,femaleA; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 femaleA]
+</trial>
+
+<trial dM_LRB2genA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_B2;
+ 833=bmask2; 875=blank4,male__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 male__A]
+</trial>
+ 
+<trial dM_RLB1genA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_B1;
+ 833=bmask2; 875=blank4,femaleA; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 femaleA]
+</trial>
+
+<trial dM_RRB1genA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 733=blank2,PRIME_B1;
+ 833=bmask2; 875=blank4,male__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 male__A]
+</trial>
+
+
+<trial d42+33LLB1genA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_B1;
+ 842=bmask2; 875=blank4,femaleA; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 femaleA]
+</trial>
+
+<trial d42+33LRB1genA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_B1;
+  842=bmask2; 875=blank4,male__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 male__A]
+</trial>
+
+<trial d42+33RLB2genA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_B2;
+ 842=bmask2; 875=blank4,femaleA; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 femaleA]
+</trial>
+
+<trial d42+33RRB2genA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_B2;
+  842=bmask2; 875=blank4,male__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 male__A]
+</trial>
+ 
+<trial d42+33LLB2genA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_B2;
+ 842=bmask2; 875=blank4,femaleA; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 femaleA]
+</trial>
+
+<trial d42+33LRB2genA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_B2;
+ 842=bmask2; 875=blank4,male__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 male__A]
+</trial>
+ 
+<trial d42+33RLB1genA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_B1;
+ 842=bmask2; 875=blank4,femaleA; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 femaleA]
+</trial>
+
+<trial d42+33RRB1genA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank2,PRIME_B1;
+ 842=bmask2; 875=blank4,male__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 male__A]
+</trial>
+
+************************************************************************
+<trial d33+42LLA1valB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_A1;
+ 875=blank4,unpl__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 unpl__B]
+</trial>
+
+<trial d33+42LRA1valB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_A1;
+  875=blank4,pleas_B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 pleas_B]
+</trial>
+
+<trial d33+42RLA2valB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_A2;
+ 875=blank4,unpl__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 unpl__B]
+</trial>
+
+<trial d33+42RRA2valB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_A2;
+  875=blank4,pleas_B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 pleas_B]
+</trial>
+ 
+<trial d33+42LLA2valB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_A2;
+ 875=blank4,unpl__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 unpl__B]
+</trial>
+
+<trial d33+42LRA2valB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_A2;
+ 875=blank4,pleas_B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 pleas_B]
+</trial>
+ 
+<trial d33+42RLA1valB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_A1;
+ 875=blank4,unpl__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 unpl__B]
+</trial>
+
+<trial d33+42RRA1valB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_A1;
+ 875=blank4,pleas_B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 pleas_B]
+</trial>
+
+<trial d33+42LLB1valA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_B1;
+ 875=blank4,unpl__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 unpl__A]
+</trial>
+
+<trial d33+42LRB1valA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_B1;
+  875=blank4,pleas_A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 pleas_A]
+</trial>
+
+<trial d33+42RLB2valA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_B2;
+ 875=blank4,unpl__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 unpl__A]
+</trial>
+
+<trial d33+42RRB2valA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_B2;
+  875=blank4,pleas_A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 pleas_A]
+</trial>
+ 
+<trial d33+42LLB2valA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_B2;
+ 875=blank4,unpl__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 unpl__A]
+</trial>
+
+<trial d33+42LRB2valA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_B2;
+ 875=blank4,pleas_A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 pleas_A]
+</trial>
+ 
+<trial d33+42RLB1valA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_B1;
+ 875=blank4,unpl__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 unpl__A]
+</trial>
+
+<trial d33+42RRB1valA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_B1;
+ 875=blank4,pleas_A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 pleas_A]
+</trial>
+
+<trial d33+42LLA1genB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_A1;
+ 875=blank4,femaleB; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 femaleB]
+</trial>
+
+<trial d33+42LRA1genB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_A1;
+  875=blank4,male__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 male__B]
+</trial>
+
+<trial d33+42RLA2genB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_A2;
+ 875=blank4,femaleB; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 femaleB]
+</trial>
+
+<trial d33+42RRA2genB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_A2;
+  875=blank4,male__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 male__B]
+</trial>
+ 
+<trial d33+42LLA2genB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_A2;
+ 875=blank4,femaleB; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 femaleB]
+</trial>
+
+<trial d33+42LRA2genB>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_A2;
+ 875=blank4,male__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A2 male__B]
+</trial>
+ 
+<trial d33+42RLA1genB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_A1;
+ 875=blank4,femaleB; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 femaleB]
+</trial>
+
+<trial d33+42RRA1genB>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_A1;
+ 875=blank4,male__B; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_A1 male__B]
+</trial>
+
+<trial d33+42LLB1genA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_B1;
+ 875=blank4,femaleA; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 femaleA]
+</trial>
+
+<trial d33+42LRB1genA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_B1;
+  875=blank4,male__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 male__A]
+</trial>
+
+<trial d33+42RLB2genA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_B2;
+ 875=blank4,femaleA; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 femaleA]
+</trial>
+
+<trial d33+42RRB2genA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_B2;
+  875=blank4,male__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 male__A]
+</trial>
+ 
+<trial d33+42LLB2genA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_B2;
+ 875=blank4,femaleA; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 femaleA]
+</trial>
+
+<trial d33+42LRB2genA>
+/ responsetime = 1475 / correctresponse = ("e")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_B2;
+ 875=blank4,male__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B2 male__A]
+</trial>
+ 
+<trial d33+42RLB1genA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_B1;
+ 875=blank4,femaleA; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 femaleA]
+</trial>
+
+<trial d33+42RRB1genA>
+/ responsetime = 1475 / correctresponse = ("i")
+/ stimulustimes = [0=blank1,focus; 500=fmask2; 800=blank1,bmask2; 833=blank2,PRIME_B1;
+ 875=blank4,male__A; 1208=windowstim; 1342=blank1a]
+/ trialdata = [PRIME_B1 male__A]
+</trial>
+
+************************************************************************
+
+<text windowstim>
+/ position = (50,51.85)
+/ color = (125,125,125)
+/ numitems = 1
+/ items = ("        !        ")
+/ erase = true (255,255,255)
+</text>
+
+<text hitwindowstim>
+/ position = (50,51.85)
+/ color = (200,50,50)
+/ numitems = 1
+/ items = ("        !        ")
+/ erase = true (255,255,255)
+</text>
+
+<text error>
+/ position = (50,51.85)
+/ numitems = 1
+/ items = ("        ERROR        ")
+/ color = (255, 0, 0)
+/ erase = true (255,255,255)
+</text>
+
+PRIME_A1:   NPLW    PRIME_A2:  DHJF
+<text A1_left>
+/ color = (120,120,120)
+/ numitems = 1
+/ items = ("NPLW")
+/ position = (25, 25)
+</text>
+
+<text A1_right>
+/ color = (120,120,120)
+/ numitems = 1
+/ items = ("NPLW")
+/ position = (75, 25)
+</text>
+
+<text A2_left>
+/ color = (120,120,120)
+/ numitems = 1
+/ items = ("DHJF")
+/ position = (25, 25)
+</text>
+
+<text A2_right>
+/ color = (120,120,120)
+/ numitems = 1
+/ items = ("DHJF")
+/ position = (75, 25)
+</text>
+
+PRIME_B1:   BMVZ    PRIME_B2:  GKQX
+<text B1_left>
+/ color = (120,120,120)
+/ numitems = 1
+/ items = ("BMVZ")
+/ position = (25, 25)
+</text>
+
+<text B1_right>
+/ color = (120,120,120)
+/ numitems = 1
+/ items = ("BMVZ")
+/ position = (75, 25)
+</text>
+
+<text B2_left>
+/ color = (120,120,120)
+/ numitems = 1
+/ items = ("GKQX")
+/ position = (25, 25)
+</text>
+
+<text B2_right>
+/ color = (120,120,120)
+/ numitems = 1
+/ items = ("GKQX")
+/ position = (75, 25)
+</text>
+
+<text female_left>
+/ color = (120,120,120)
+/ numitems = 1
+/ items = ("   female   ")
+/ position = (25, 25)
+</text>
+
+<text male_right>
+/ color = (120,120,120)
+/ numitems = 1
+/ items = ("   male   ")
+/ position = (75, 25)
+</text>
+
+<text unpleasant_left>
+/ color = (120,120,120)
+/ numitems = 1
+/ items = ("   unpleasant   ")
+/ position = (25, 25)
+</text>
+
+<text pleasant_right>
+/ color = (120,120,120)
+/ numitems = 1
+/ items = ("   pleasant   ")
+/ position = (75, 25)
+</text>
+
+<text focus>
+/ fontstyle = ("Arial", 5.3%, true, false, false, false, 5)
+/ color = (160,160,160)
+/ position = (50,51.65)
+/ numitems = 1
+/ items = ("      +      ")
+/ erase = true (255,255,255)
+</text>
+
+<picture blank1>
+/ numitems = 1
+/ position = (50,51.8)
+/ items = ("blank2r.bmp")
+/ size = (37.4%, 23.7%)
+/ erase = true (255,255,255)
+</picture>
+
+<text grayblank>
+/ numitems = 1
+/ position = (50,51.8)
+/ txbgcolor = (170,170,170)
+/ items = ("    ")
+/ size = (37.4%, 23.7%)
+/ erase = true (170,170,170)
+</text>
+
+<picture blank1a>
+/ numitems = 1
+/ position = (50,51.8)
+/ items = ("blank2r.bmp")
+/ size = (37.4%, 23.7%)
+/ erase = true (255,255,255)
+</picture>
+
+<picture blank2>
+/ numitems = 1
+/ position = (50,51.8)
+/ size = (37.4%, 23.7%)
+/ items = ("blank2r.bmp")
+/ erase = true (255,255,255)
+</picture>
+
+<picture blank4>
+/ numitems = 1
+/ position = (50,51.8)
+/ size = (37.4%, 23.7%)
+/ items = ("blank2r.bmp")
+/ erase = true (255,255,255)
+</picture>
+
+<picture fmask2>
+/ numitems = 8
+/ items = fmask2
+/ position = (50,51.8)
+/ size = (37.4%, 23.7%)
+/ erase = true (255,255,255)
+</picture>
+
+<picture bmask2>
+/ numitems = 8
+/ items = bmask2
+/ position = (50,51.8)
+/ size = (37.4%, 23.7%)
+/ select = NOT(fmask2)
+/ erase = true (255,255,255)
+</picture>
+
+<ITEM fmask2>
+/ 1 ="B1r.bmp"
+/ 2 ="B2r.bmp"
+/ 3 ="B3r.bmp"
+/ 4 ="B4r.bmp"
+/ 5 ="C1r.bmp"
+/ 6 ="C2r.bmp"
+/ 7 ="C3r.bmp"
+/ 8 ="C4r.bmp"
+</ITEM>
+
+<ITEM bmask2>
+/ 1 ="B1r.bmp"
+/ 2 ="B2r.bmp"
+/ 3 ="B3r.bmp"
+/ 4 ="B4r.bmp"
+/ 5 ="C1r.bmp"
+/ 6 ="C2r.bmp"
+/ 7 ="C3r.bmp"
+/ 8 ="C4r.bmp"
+</ITEM>
+
+******************************************
+A = adfhjlnopwy
+B = bcegikmqrstuvxz
+******************************************
+PRIME_B2:  GKQX     PRIME_B1:  BMVZ
+PRIME_B1:   BMVZ    PRIME_B2:  GKQX
+******************************************
+Use same stimuli for visibility test phase as for acquisition
+******************************************
+PRIME_A1:
+<text PRIME_A1>
+/ position = (50,51.85)
+/ color = (0,0,0)
+/ fontstyle = ("Arial", 5.0%, true)
+/ items = PRIME_A1
+/ erase = true (255,255,255)
+</text>
+
+<ITEM PRIME_A1>
+/ 1 ="NPLW" 
+</ITEM>
+
+PRIME_A2:
+<text PRIME_A2>
+/ position = (50,51.85)
+/ color = (0,0,0)
+/ fontstyle = ("Arial", 5.0%, true)
+/ items = PRIME_A2
+/ erase = true (255,255,255)
+</text>
+
+<ITEM PRIME_A2>
+/ 1 ="DHJF"
+</ITEM>
+
+PRIME_B1:
+<text PRIME_B1>
+/ position = (50,51.85)
+/ color = (0,0,0)
+/ fontstyle = ("Arial", 5.0%, true)
+/ items = PRIME_B1
+/ erase = true (255,255,255)
+</text>
+
+<ITEM PRIME_B1>
+/ 1 ="BMVZ" 
+</ITEM>
+
+PRIME_B2:
+<text PRIME_B2>
+/ position = (50,51.85)
+/ color = (0,0,0)
+/ fontstyle = ("Arial", 5.0%, true)
+/ items = PRIME_B2
+/ erase = true (255,255,255)
+</text>
+
+<ITEM PRIME_B2>
+/ 1 ="GKQX" 
+</ITEM>
+
+***********************************
+
+<text femaleA>
+/ fontstyle = ("Arial", 5.3%, true, false, false, false, 5)
+/ position = (50,51.65)
+/ color = (0,0,0)
+/ items = femaleA
+/ numitems = 6
+/ erase = true (255,255,255)
+</text>
+
+<text pleas_A>
+/ fontstyle = ("Arial", 5.3%, true, false, false, false, 5)
+/ position = (50,51.65)
+/ color = (0,0,0)
+/ items = pleas_A
+/ numitems = 6
+/ erase = true (255,255,255)
+</text>
+
+<text unpl__A>
+/ fontstyle = ("Arial", 5.3%, true, false, false, false, 5)
+/ position = (50,51.65)
+/ color = (0,0,0)
+/ items = unpl__A
+/ numitems = 6
+/ erase = true (255,255,255)
+</text>
+
+<text male__A>
+/ fontstyle = ("Arial", 5.3%, true, false, false, false, 5)
+/ position = (50,51.65)
+/ color = (0,0,0)
+/ items = male__A
+/ numitems = 6
+/ erase = true (255,255,255)
+</text>
+
+
+<text femaleB>
+/ fontstyle = ("Arial", 5.3%, true, false, false, false, 5)
+/ position = (50,51.65)
+/ color = (0,0,0)
+/ items = femaleB
+/ numitems = 6
+/ erase = true (255,255,255)
+</text>
+
+<text pleas_B>
+/ fontstyle = ("Arial", 5.3%, true, false, false, false, 5)
+/ position = (50,51.65)
+/ color = (0,0,0)
+/ items = pleas_B
+/ numitems = 6
+/ erase = true (255,255,255)
+</text>
+
+<text unpl__B>
+/ fontstyle = ("Arial", 5.3%, true, false, false, false, 5)
+/ position = (50,51.65)
+/ color = (0,0,0)
+/ items = unpl__B
+/ numitems = 6
+/ erase = true (255,255,255)
+</text>
+
+<text male__B>
+/ fontstyle = ("Arial", 5.3%, true, false, false, false, 5)
+/ position = (50,51.65)
+/ color = (0,0,0)
+/ items = male__B
+/ numitems = 6
+/ erase = true (255,255,255)
+</text>
+
+female lower case ADFHJLNOPWY
+<ITEM femaleA>
+/ 1 ="joan" 
+/ 2 ="donna"
+/ 3 ="lola"
+/ 4 ="wanda"
+/ 5 ="hannah"
+/ 6 ="ann"
+</ITEM>
+
+positive lower case adfhjlnopwy
+<item pleas_A>
+/ 1 ="dandy"
+/ 2 ="joy"
+/ 3 ="play"
+/ 4 ="happy"
+/ 5 ="jolly"
+/ 6 ="fond"
+</ITEM>
+
+negative lower case ADFHJLNOPWY
+<item unpl__A>
+/ 1 ="flaw"
+/ 2 ="folly"
+/ 3 ="flood"
+/ 4 ="oaf"
+/ 5 ="flop"
+/ 6 ="old"
+</ITEM>
+
+male lower case ADFHJLNOPWY
+<ITEM male__A>
+/ 1 ="john" 
+/ 2 ="dan"
+/ 3 ="alan" 
+/ 4 ="wally"
+/ 5 ="noah" 
+/ 6 ="donald"
+</ITEM>
+
+female lower case bcegikmqrstuvxz
+<ITEM femaleB>
+/ 1 ="meg"
+/ 2 ="susie" 
+/ 3 ="tess" 
+/ 4 ="sue"
+/ 5 ="vicki" 
+/ 6 ="bess"
+</ITEM>
+
+positive lower case bcegikmqrstuvxz
+<item pleas_B>
+/ 1 ="kiss"
+/ 2 ="trust"
+/ 3 ="true"
+/ 4 ="cute"
+/ 5 ="best"
+/ 6 ="better"
+</ITEM>
+
+negative lower case bcegikmqrstuvxz
+<ITEM unpl__B>
+/ 1 ="miser"
+/ 2 ="sick"
+/ 3 ="bitter"
+/ 4 ="bruise" 
+/ 5 ="crime"
+/ 6 ="victim"
+</ITEM>
+
+male lower case bcegikmqrstuvxz
+<ITEM male__B>
+/ 1 ="eric" 
+/ 2 ="tim" 
+/ 3 ="mike"
+/ 4 ="kirk" 
+/ 5 ="burt"
+/ 6 ="steve" 
+</ITEM>
+
+
+
+***********************************
+<instruct>
+/ NextKey = ("i")
+/ PrevKey = ("e")
+/ fontstyle = ("Arial", 2.6%, true, false, false, false, 5)
+/ windowsize = (80%, 80%)
+</instruct>
+
+<PAGE intro1>
+^^DESCRIPTION OF PROCEDURES:
+^^CATEGORIZATION JUDGMENTS
+^^Anthony G. Greenwald, Professor,
+^Psychology (543-7227)
+^^A brief description of procedures of this research follows on the next several
+ display pages.
+</PAGE>
+
+<PAGE intro2> 
+^^^We are seeking to develop and test theories of unconscious processes that
+influence the processing of categories. In this experiment, you will classify
+words into one of two categories.
+^^^The research takes approximately 45 minutes.  At the conclusion, you will have
+an opportunity to ask whatever questions you wish about your experiences in the
+research or the theories tested in the research.
+</PAGE>
+
+<PAGE intro3>
+^^This research assumes that your vision is normal or corrected to normal.
+^^IF YOUR VISION IS NOT NORMAL OR CORRECTED TO NORMAL, please tell the
+experimenter!! You will still receive credit.
+^^Your identity as a subject is confidential.  Further, you are free to discontinue
+participation at any time, without penalty.
+^^Now, please read the statement on the next page, where you will also be asked to
+respond to a standard informed consent question.
+</PAGE>
+
+<PAGE intro4>
+^^CONSENT STATEMENT
+^^I have read the description of procedure.  I understand that questions that I may
+have about this research will be answered by Professor Greenwald or one of the
+other researchers working on this project.
+^^I consent to participate in the research that has been described on the preceding
+display pages.
+^^[INSTRUCTION: Please continue to the next page if you consent to proceed.  If you
+wish to ask any questions first, open the door now to speak to the experimenter. 
+IF YOU WISH NOT TO PROCEED, you should open the door and inform the experimenter.
+</PAGE>
+
+<PAGE cattask>
+^^The tasks that you will be doing in this experiment involve CATEGORY JUDGMENT. 
+On each trial, a stimulus will be displayed, and you must assign it to one of two
+categories. You should respond AS RAPIDLY AS POSSIBLE in categorizing each
+stimulus, but don't respond so fast that you make many errors. (Occasional errors
+are okay.)
+^^You will be using two keys: the "e" key (which you should press with a finger of your
+left hand), and the "i" key (which you should press with a finger of your right hand.)
+</PAGE>
+
+<PAGE end1>
+^^^^The experiment is now completed.
+^^^^^Please press the 'i' key to read a description of the purposes of the
+experiment and an explanation of how your data will be used.
+</page>
+
+<PAGE end2>
+^This experiment was designed to test effects of briefly flashed letter strings that were
+associated either with male or female names or with pleasant-meaning or unpleasant-meaning
+words.  These stimuli are sometimes identified as "subliminal" when they are shown so briefly
+as to be difficult or impossible to see.
+^^In this experiment you sometimes received stimuli (letter strings) that may have been too brief to
+be visible, and sometimes the stimuli were more easily visible. 
+^^In the early parts of this experiment the letter strings were reliably associated with one type
+of name (male or female) or one type of word (pleasant or unpleasant).
+^^At other times in the experiment you were tested in to determine if you had learned the associations
+between the letter strings and the words or names.  Some of these tests did not depend on your being
+aware of having learned anything — the learning could be unconscious.
+^^PRESS THE 'i' KEY FOR THE FINAL PAGE OF EXPLANATION.
+</page>
+
+<PAGE end3>
+^^^The last task of this experiment tested your ability to see briefly flashed letter stimuli.  Your
+performance on that task might predict your ability to learn the relationships between the letter
+strings and the words or names.
+^^This experiment is a variation of a procedure known as classical conditioning, first developed by
+Ivan Pavlov.  The different conditions will allow us to determine how conditioning depends on
+(a) your ability to see the letter strings and (b) your conscious knowledge (awareness) of the
+association between specific letter strings and the names or words that were associated with them.
+^^If you have time, the experimenter may ask you what you were able to learn of the associations
+between the letter strings and the words or names that followed them.
+^^PLEASE PRESS "i" FOR THE EXPERIMENT'S CONCLUDING PAGE.
+</page>
+
+<PAGE end4>
+^^^^^The experiment is now concluded.  Please open the door and let yourself out.  You have
+already been credited with participation in the experiment.  If you have any questions or reactions
+to the experiment, please feel free to discuss them with the experimenter.
+</PAGE>
+
+<block dA12_valB_pract1>
+/ bgstim = (A2_left, A1_right)
+/ preinstructions = (dApract1, dpract2)
+/ trials = [1-12=random(dL_LLA2valB, dL_LRA2valB, dL_RLA1valB, dL_RRA1valB)]
+/ blockfeedback = (correct)
+/ errormessage = true(error,200)
+</block>
+
+<block dB12_valA_pract1>
+/ bgstim = (B2_left, B1_right)
+/ preinstructions = (dBpract1, dpract2)
+/ trials = [1-12=random(dL_LLB2valA, dL_LRB2valA, dL_RLB1valA, dL_RRB1valA)]
+/ blockfeedback = (correct)
+/ errormessage = true(error,200)
+</block>
+
+<block dA12_genB_pract1>
+/ bgstim = (A2_left, A1_right)
+/ preinstructions = (dApract1, dpract2)
+/ trials = [1-12=random(dL_LLA2genB, dL_LRA2genB, dL_RLA1genB, dL_RRA1genB)]
+/ blockfeedback = (correct)
+/ errormessage = true(error,200)
+</block>
+
+<block dB12_genA_pract1>
+/ bgstim = (B2_left, B1_right)
+/ preinstructions = (dBpract1, dpract2)
+/ trials = [1-12=random(dL_LLB2genA, dL_LRB2genA, dL_RLB1genA, dL_RRB1genA)]
+/ blockfeedback = (correct)
+/ errormessage = true(error,200)
+</block>
+<block dA12_valB_pract2>
+/ bgstim = (A2_left, A1_right)
+/ preinstructions = (dMpract3)
+/ postinstructions = (dMpract4)
+/ trials = [1-12=random(dM_LLA2valB, dM_LRA2valB, dM_RLA1valB, dM_RRA1valB)]
+/ blockfeedback = (correct)
+/ errormessage = true(error,200)
+</block>
+
+<block dB12_valA_pract2>
+/ bgstim = (B2_left, B1_right)
+/ preinstructions = (dMpract3)
+/ postinstructions = (dMpract4)
+/ trials = [1-12=random(dM_LLB2valA, dM_LRB2valA, dM_RLB1valA, dM_RRB1valA)]
+/ blockfeedback = (correct)
+/ errormessage = true(error,200)
+</block>
+
+<block dA12_genB_pract2>
+/ bgstim = (A2_left, A1_right)
+/ preinstructions = (dMpract3)
+/ postinstructions = (dMpract4)
+/ trials = [1-12=random(dM_LLA2genB, dM_LRA2genB, dM_RLA1genB, dM_RRA1genB)]
+/ blockfeedback = (correct)
+/ errormessage = true(error,200)
+</block>
+
+<block dB12_genA_pract2>
+/ bgstim = (B2_left, B1_right)
+/ preinstructions = (dMpract3)
+/ postinstructions = (dMpract4)
+/ trials = [1-12=random(dM_LLB2genA, dM_LRB2genA, dM_RLB1genA, dM_RRB1genA)]
+/ blockfeedback = (correct)
+/ errormessage = true(error,200)
+</block>
+
